@@ -3,14 +3,20 @@ export type Lang = "en" | "bn";
 export const translations = {
 	// Navbar
 	nav: {
+		overview: { en: "Overview", bn: "পরিচিতি" },
 		services: { en: "Services", bn: "সেবাসমূহ" },
+		works: { en: "Major Works", bn: "উল্লেখযোগ্য কাজ" },
+		machinery: { en: "Machinery", bn: "যন্ত্রপাতি" },
 		pricing: { en: "Pricing", bn: "মূল্য তালিকা" },
 		technology: { en: "Technology", bn: "প্রযুক্তি" },
 		testimonials: { en: "Testimonials", bn: "প্রশংসাপত্র" },
 		faq: { en: "FAQ", bn: "প্রশ্নোত্তর" },
 		locations: { en: "Locations", bn: "শাখাসমূহ" },
 		contact: { en: "Contact", bn: "যোগাযোগ" },
-		orderWhatsApp: { en: "Order via WhatsApp", bn: "WhatsApp এ অর্ডার" },
+		orderWhatsApp: {
+			en: "Contact via WhatsApp",
+			bn: "WhatsApp-এ যোগাযোগ করুন",
+		},
 	},
 
 	// Hero
@@ -19,57 +25,299 @@ export const translations = {
 			en: "Professional Printing Services",
 			bn: "পেশাদার প্রিন্টিং সেবা",
 		},
-		heading1: { en: "Large Format", bn: "বড় ফরম্যাটের" },
-		heading2: { en: "Printing", bn: "প্রিন্টিং" },
-		heading3: { en: "Done Right", bn: "সঠিকভাবে" },
+		heading1: { en: "AutoCAD ", bn: "অটোক্যাড " },
+		heading2: { en: "Training Home", bn: "ট্রেনিং হোম" },
+		heading3: { en: "ATH", bn: "এ টি এইচ" },
 		description: {
-			en: "Maps, architectural plans, engineering drawings — printed with precision, speed, and unmatched quality. Trusted by professionals across industries.",
-			bn: "মানচিত্র, স্থাপত্য নকশা, ইঞ্জিনিয়ারিং ড্রয়িং — নির্ভুলতা, গতি এবং অতুলনীয় মানের সাথে প্রিন্ট করা হয়। সকল শিল্পের পেশাদারদের বিশ্বস্ত।",
+			en: "Maps, architectural plans, engineering drawings - printed with precision, speed, and unmatched quality. Trusted by professionals across industries.",
+			bn: "ম্যাপকপি, স্থাপত্য নকশা, ইঞ্জিনিয়ারিং ড্রয়িং - নির্ভুলতা, গতি এবং অতুলনীয় মানের সাথে প্রিন্ট করা হয়। সকল শিল্পের পেশাদারদের বিশ্বস্ত।",
 		},
 		viewPricing: { en: "View Pricing", bn: "মূল্য দেখুন" },
-		locations: { en: "Our Locations", bn: "আমাদের শাখাসমূহ" },
 	},
 
 	// Services
 	services: {
 		badge: { en: "What We Do", bn: "আমরা যা করি" },
 		heading: {
-			en: "Professional Printing Services",
-			bn: "পেশাদার প্রিন্টিং সেবা",
+			en: "Every Print Job. One Trusted Partner.",
+			bn: "সব ধরনের প্রিন্ট। এক বিশ্বস্ত প্রতিষ্ঠান।",
 		},
 		subtitle: {
-			en: "From a single A4 page to thousands of A0 sheets — we handle it all with speed and precision.",
-			bn: "একটি A4 পৃষ্ঠা থেকে হাজার হাজার A0 শীট — আমরা সবকিছু গতি ও নির্ভুলতার সাথে পরিচালনা করি।",
+			en: "From a single A4 photocopy to 60,000 large-format maps, ATH has delivered it all since 1994.",
+			bn: "একটি A4 ফটোকপি থেকে ৬০,০০০ বড় ফরম্যাটের মানচিত্র, ১৯৯৪ সাল থেকে ATH সবই সরবরাহ করেছে।",
 		},
 		items: [
 			{
-				title: { en: "Map Printing", bn: "মানচিত্র প্রিন্টিং" },
+				title: {
+					en: "Map Copy & Blueprint Printing",
+					bn: "ম্যাপ কপি ও ব্লুপ্রিন্ট প্রিন্টিং",
+				},
 				description: {
-					en: "High-resolution maps at any scale. Perfect for surveyors, geographers, and urban planners.",
-					bn: "যেকোনো স্কেলে উচ্চ-রেজোলিউশন মানচিত্র। জরিপকারী, ভূগোলবিদ এবং নগর পরিকল্পনাকারীদের জন্য আদর্শ।",
+					en: "Mouza maps, cadastral sheets, tracing and ammonia blueprints — our specialty since 1996.",
+					bn: "মৌজা ম্যাপ, ভূমি নকশা, ট্রেসিং ও অ্যামোনিয়া ব্লুপ্রিন্ট — ১৯৯৬ সাল থেকে আমাদের বিশেষত্ব।",
 				},
 			},
 			{
-				title: { en: "Engineering Drawings", bn: "ইঞ্জিনিয়ারিং ড্রয়িং" },
+				title: {
+					en: "Large Format Printing & Scanning (A0–A4)",
+					bn: "বড় ফরম্যাট প্রিন্টিং ও স্ক্যানিং (A0–A4)",
+				},
 				description: {
-					en: "Precise technical drawings with accurate line weights and dimensions for engineering projects.",
-					bn: "ইঞ্জিনিয়ারিং প্রকল্পের জন্য সঠিক লাইন ওয়েট এবং মাত্রা সহ নির্ভুল প্রযুক্তিগত ড্রয়িং।",
+					en: 'Up to 42" wide plotters for architectural plans and engineering drawings, plus precision scanning.',
+					bn: 'স্থাপত্য নকশা ও ইঞ্জিনিয়ারিং ড্রয়িংয়ের জন্য ৪২" পর্যন্ত প্লটার, সাথে নির্ভুল স্ক্যানিং।',
 				},
 			},
 			{
-				title: { en: "Architectural Plans", bn: "স্থাপত্য নকশা" },
+				title: {
+					en: "Photocopy & Document Printing",
+					bn: "ফটোকপি ও ডকুমেন্ট প্রিন্টিং",
+				},
 				description: {
-					en: "Professional plan sets for architects — from concept sketches to construction documents.",
-					bn: "স্থপতিদের জন্য পেশাদার নকশা সেট — ধারণা স্কেচ থেকে নির্মাণ নথি পর্যন্ত।",
+					en: "High-volume photocopying and document runs — up to 20,000 A4 copies every single day.",
+					bn: "উচ্চ-পরিমাণ ফটোকপি ও ডকুমেন্ট প্রিন্ট — প্রতিদিন ২০,০০০ A4 কপি পর্যন্ত।",
 				},
 			},
 			{
-				title: { en: "Bulk Printing", bn: "বাল্ক প্রিন্টিং" },
+				title: {
+					en: "Color & Black / White Printing",
+					bn: "রঙিন ও সাদা-কালো প্রিন্টিং",
+				},
 				description: {
-					en: "Volume discounts for organizations and companies. Submit hundreds of pages in one order.",
-					bn: "প্রতিষ্ঠান এবং কোম্পানির জন্য ভলিউম ডিসকাউন্ট। এক অর্ডারে শত শত পৃষ্ঠা জমা দিন।",
+					en: "Vivid, colour-accurate output on 100 GSM and offset paper, or crisp economical B/W.",
+					bn: "১০০ GSM ও অফসেট কাগজে উজ্জ্বল, নির্ভুল রঙিন আউটপুট, অথবা পরিষ্কার সাশ্রয়ী সাদা-কালো।",
 				},
 			},
+			{
+				title: { en: "Binding & Lamination", bn: "বাইন্ডিং ও লেমিনেশন" },
+				description: {
+					en: 'Finish your project properly — professional binding and lamination up to 36" wide.',
+					bn: 'আপনার কাজ সম্পূর্ণ করুন — ৩৬" পর্যন্ত পেশাদার বাইন্ডিং ও লেমিনেশন।',
+				},
+			},
+		],
+		cta: { en: "Send Your Files on WhatsApp", bn: "WhatsApp-এ ফাইল পাঠান" },
+	},
+
+	// Overview
+	overview: {
+		badge: { en: "Company Overview", bn: "আমাদের পরিচয়" },
+		heading: {
+			en: "Three Decades of Printing Excellence",
+			bn: "তিন দশকের প্রিন্টিং দক্ষতা",
+		},
+		para1: {
+			en: "Established in 1994 at Farmgate, Dhaka, AutoCAD Training Home (ATH) began as a professional AutoCAD training institute. In 1996, we expanded into large-format tracing, blueprint and ammonia printing — and never looked back.",
+			bn: "১৯৯৪ সালে ঢাকার ফার্মগেটে AutoCAD Training Home (ATH) যাত্রা শুরু করে পেশাদার AutoCAD প্রশিক্ষণ কেন্দ্র হিসেবে। ১৯৯৬ সালে আমরা বড় ফরম্যাটের ট্রেসিং, নীলনক্সা আর অ্যামোনিয়া প্রিন্টিং-এ পা রাখি — আর সেদিন থেকে পিছনে ফিরে তাকাতে হয়নি।",
+		},
+		para2: {
+			en: "Today, ATH is the trusted printing partner of leading architectural firms, engineering consultancies, developers, and government organizations across Bangladesh — a true one-stop solution for professional printing.",
+			bn: "বর্তমানে ATH বাংলাদেশের শীর্ষস্থানীয় আর্কিটেকচার ফার্ম, ইঞ্জিনিয়ারিং কনসালটেন্সি, ডেভেলপার আর সরকারি প্রতিষ্ঠানের বিশ্বস্ত মুদ্রণ সঙ্গী — যা পেশাদার মুদ্রণের জন্য একটি সম্পূর্ণ সমাধান।",
+		},
+		points: [
+			{
+				en: "Fully air-conditioned printing rooms",
+				bn: "এসি সহ প্রিন্টিং রুম",
+			},
+			{
+				en: "3 standby generators — zero downtime",
+				bn: "৩টি স্ট্যান্ডবাই জেনারেটর — কাজ থামে না",
+			},
+			{
+				en: "15 skilled technical professionals",
+				bn: "১৫ জন দক্ষ অপারেটর",
+			},
+			{
+				en: "Trusted by government & private institutions",
+				bn: "সরকারি ও বেসরকারি প্রতিষ্ঠানের আস্থাভাজন",
+			},
+		],
+		stats: {
+			years: { en: "Years of Experience", bn: "অভিজ্ঞতার বছর" },
+			dailyCapacity: {
+				en: "Daily Print Capacity",
+				bn: "দৈনিক প্রিন্ট সক্ষমতা",
+			},
+			team: { en: "Skilled Personnel", bn: "দক্ষ কর্মী" },
+			branches: { en: "Branches in Dhaka", bn: "ঢাকায় শাখা" },
+		},
+		imageAlt: {
+			en: "ATH printing facility with large-format plotters",
+			bn: "এটিএইচ-এর বড় ফরম্যাটের প্লটার সম্বলিত প্রিন্টিং সুবিধা",
+		},
+	},
+
+	// Major Works
+	works: {
+		badge: { en: "Proven Track Record", bn: "Proven Track Record" },
+		heading: {
+			en: "Major Works That Speak for Themselves",
+			bn: "Major Works That Speak for Themselves",
+		},
+		subtitle: {
+			en: "National-scale projects delivered for government and private sector leaders.",
+			bn: "National-scale projects delivered for government and private sector leaders.",
+		},
+		copies: { en: "copies", bn: "copies" },
+		banner: {
+			en: "copies delivered in flagship national projects",
+			bn: "copies delivered in flagship national projects",
+		},
+		items: [
+			{
+				quantity: "60,000",
+				title: {
+					en: "Mouza Maps of Entire Bangladesh",
+					bn: "Mouza Maps of Entire Bangladesh",
+				},
+				client: {
+					en: "Bangladesh Bureau of Statistics",
+					bn: "Bangladesh Bureau of Statistics",
+				},
+				year: { en: "2005", bn: "2005" },
+				note: { en: "100 GSM white paper", bn: "100 GSM white paper" },
+			},
+			{
+				quantity: "60,000",
+				title: {
+					en: "Tracing & Ammonia Printing — Detailed Area Plan (DAP)",
+					bn: "Tracing & Ammonia Printing — Detailed Area Plan (DAP)",
+				},
+				client: {
+					en: "Design Development Company (DDC)",
+					bn: "Design Development Company (DDC)",
+				},
+				year: { en: "2011", bn: "2011" },
+				note: {
+					en: "Large-format blueprint output",
+					bn: "Large-format blueprint output",
+				},
+			},
+			{
+				quantity: "38,000",
+				title: {
+					en: "Color Prints — Airport 3rd Terminal Project",
+					bn: "Color Prints — Airport 3rd Terminal Project",
+				},
+				client: {
+					en: "Airport 3rd Terminal Project",
+					bn: "Airport 3rd Terminal Project",
+				},
+				year: { en: "2025", bn: "2025" },
+				note: {
+					en: '23"×36" 100 GSM white paper',
+					bn: '23"×36" 100 GSM white paper',
+				},
+			},
+			{
+				quantity: "38,000",
+				title: {
+					en: "Color Map of Khulna Division",
+					bn: "Color Map of Khulna Division",
+				},
+				client: {
+					en: "Design Development Company (DDC)",
+					bn: "Design Development Company (DDC)",
+				},
+				year: { en: "2025", bn: "2025" },
+				note: {
+					en: '30"×40" 100 GSM offset paper',
+					bn: '30"×40" 100 GSM offset paper',
+				},
+			},
+			{
+				quantity: "15,000",
+				title: {
+					en: "Tracing & Ammonia Printing — DAP",
+					bn: "Tracing & Ammonia Printing — DAP",
+				},
+				client: {
+					en: "Design Development Company (DDC)",
+					bn: "Design Development Company (DDC)",
+				},
+				year: { en: "2022–23", bn: "2022–23" },
+				note: {
+					en: "Detailed Area Plan implementation",
+					bn: "Detailed Area Plan implementation",
+				},
+			},
+		],
+	},
+
+	// Machinery
+	machinery: {
+		badge: { en: "Our Machinery", bn: "Our Machinery" },
+		heading: {
+			en: "An Arsenal of Industrial Printing Power",
+			bn: "An Arsenal of Industrial Printing Power",
+		},
+		subtitle: {
+			en: "One of the largest fleets of large-format plotters in Bangladesh — backed by air-conditioned rooms and standby power for zero downtime.",
+			bn: "One of the largest fleets of large-format plotters in Bangladesh — backed by air-conditioned rooms and standby power for zero downtime.",
+		},
+		machines: [
+			{
+				name: { en: "Large Format Plotters", bn: "Large Format Plotters" },
+				count: 15,
+				detail: { en: '24" · 36" · 42" widths', bn: '24" · 36" · 42" widths' },
+			},
+			{
+				name: { en: '36" Map Copiers', bn: '36" Map Copiers' },
+				count: 6,
+				detail: {
+					en: "High-volume map duplication",
+					bn: "High-volume map duplication",
+				},
+			},
+			{
+				name: { en: "Ammonia Printers", bn: "Ammonia Printers" },
+				count: 4,
+				detail: {
+					en: "Classic blueprint output",
+					bn: "Classic blueprint output",
+				},
+			},
+			{
+				name: { en: "A3 Printers", bn: "A3 Printers" },
+				count: 10,
+				detail: {
+					en: "Everyday document printing",
+					bn: "Everyday document printing",
+				},
+			},
+			{
+				name: { en: "A3 Photocopiers", bn: "A3 Photocopiers" },
+				count: 6,
+				detail: {
+					en: "4 color + 2 black & white",
+					bn: "4 color + 2 black & white",
+				},
+			},
+			{
+				name: { en: "Lamination Machines", bn: "Lamination Machines" },
+				count: 3,
+				detail: { en: 'Up to 36" width', bn: 'Up to 36" width' },
+			},
+		],
+		extras: {
+			computers: { en: "Computers", bn: "Computers" },
+			generators: { en: "Standby Generators", bn: "Standby Generators" },
+		},
+		imageAlt: {
+			en: "Large format plotter printing a detailed map",
+			bn: "Large format plotter printing a detailed map",
+		},
+		capacityHeading: {
+			en: "Daily Printing Capacity",
+			bn: "Daily Printing Capacity",
+		},
+		capacityUnit: { en: "copies / day", bn: "copies / day" },
+		capacity: [
+			{ size: "A4", value: "20,000" },
+			{ size: "A3 Color", value: "10,000" },
+			{ size: "A2", value: "6,000" },
+			{ size: "A1", value: "4,000" },
+			{ size: "E0", value: "3,000" },
+			{ size: "A0", value: "2,000" },
 		],
 	},
 

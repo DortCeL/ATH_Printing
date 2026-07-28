@@ -4,12 +4,12 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
 
 const navLinks = [
+	{ key: "overview" as const, href: "#overview" },
 	{ key: "services" as const, href: "#services" },
+	{ key: "works" as const, href: "#works" },
+	{ key: "machinery" as const, href: "#machinery" },
 	{ key: "pricing" as const, href: "#pricing" },
-	{ key: "technology" as const, href: "#technology" },
-	{ key: "testimonials" as const, href: "#testimonials" },
 	{ key: "locations" as const, href: "#locations" },
-	{ key: "faq" as const, href: "#faq" },
 	{ key: "contact" as const, href: "#contact" },
 ];
 
@@ -31,11 +31,18 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-500 rounded-2xl border bg-card/90 backdrop-blur-xl border-border/50 shadow-xl shadow-black/10`}
+			className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-500 rounded-2xl border ${
+				scrolled
+					? "bg-white/90 backdrop-blur-xl border-border/50 shadow-xl shadow-black/20"
+					: "bg-white backdrop-blur-lg shadow-xl border-border/30"
+			}`}
 		>
 			<div className='flex items-center justify-between h-14 px-5'>
-				<a href='#' className='text-xl font-heading font-bold text-black'>
-					AutoCAD Training Home
+				<a
+					href='#'
+					className='text-xl font-heading font-extrabold text-primary tracking-widest'
+				>
+					ATH
 				</a>
 
 				{/* Desktop */}
@@ -44,7 +51,7 @@ const Navbar = () => {
 						<a
 							key={link.href}
 							href={link.href}
-							className='text-xs font-medium text-gray-600 hover:text-orange-600 hover:shadow-lg duration-300 px transition-all'
+							className='text-sm font-bold text-gray-800 hover:text-gray-600 transition-colors'
 						>
 							{t(translations.nav[link.key])}
 						</a>
@@ -91,13 +98,13 @@ const Navbar = () => {
 
 			{/* Mobile menu */}
 			{open && (
-				<div className='lg:hidden border-t border-border/30 px-5 pb-5 pt-3 space-y-3'>
+				<div className='lg:hidden border-t border-border/30 px-5 pb-5 pt-3 space-y-6 bg-'>
 					{navLinks.map((link) => (
 						<a
 							key={link.href}
 							href={link.href}
 							onClick={() => setOpen(false)}
-							className='block text-sm font-medium text-muted-foreground hover:text-foreground'
+							className='block text-sm font-bold text-gray-800 hover:text-gray-600 transition-colors'
 						>
 							{t(translations.nav[link.key])}
 						</a>
