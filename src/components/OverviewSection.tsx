@@ -28,12 +28,12 @@ const OverviewSection = () => {
 	];
 
 	return (
-		<section id='overview' className='py-20 md:py-28'>
-			<p className='text-accent text-center font-semibold text-lg uppercase tracking-wider mb-10'>
+		<section id='overview' className='py-16 sm:py-20 md:py-28'>
+			<p className='text-accent text-center font-semibold text-sm sm:text-base uppercase tracking-wider mb-8 sm:mb-10 px-4'>
 				{t(o.badge)}
 			</p>
 			<div className='container'>
-				<div className='grid lg:grid-cols-2 gap-16 items-center'>
+				<div className='grid lg:grid-cols-2 gap-10 lg:gap-16 items-center'>
 					{/* LEFT COLUMN */}
 					<div>
 						{/* REPLACED the old img and comment with this new component */}

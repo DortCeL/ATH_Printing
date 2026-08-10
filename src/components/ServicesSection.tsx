@@ -1,100 +1,140 @@
-import {
-	Map,
-	Printer,
-	Copy,
-	Palette,
-	BookOpen,
-	MessageCircle,
-} from "lucide-react";
+import { Map, Printer, Copy, Palette, BookOpen, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
 
-const WHATSAPP_URL =
-	"https://wa.me/8801722881393?text=Hi%20ATH%2C%20I%20want%20to%20place%20a%20print%20order";
+const icons: LucideIcon[] = [Map, Printer, Copy, Palette, BookOpen];
 
-const icons = [Map, Printer, Copy, Palette, BookOpen];
+const cardThemes = [
+	{
+		shell: "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20",
+		icon: "bg-white/20 text-white",
+		num: "text-white/25",
+		tag: "text-primary-foreground/75",
+	},
+	{
+		shell: "bg-accent text-accent-foreground border-accent shadow-md shadow-accent/25",
+		icon: "bg-white/25 text-white",
+		num: "text-white/30",
+		tag: "text-accent-foreground/80",
+	},
+	{
+		shell: "bg-[#1a6f8b] text-white border-[#1a6f8b] shadow-md shadow-[#1a6f8b]/25",
+		icon: "bg-white/20 text-white",
+		num: "text-white/25",
+		tag: "text-white/75",
+	},
+	{
+		shell: "bg-[#e8a54b] text-[#1a1208] border-[#e8a54b] shadow-md shadow-[#e8a54b]/25",
+		icon: "bg-[#1a1208]/10 text-[#1a1208]",
+		num: "text-[#1a1208]/20",
+		tag: "text-[#1a1208]/70",
+	},
+];
 
 const ServicesSection = () => {
 	const { t } = useLanguage();
 	const s = translations.services;
+	const [featured, ...rest] = s.items;
 
 	return (
-		<section id='services' className='py-20 md:py-28 bg-surface-blue'>
-			<div className='container'>
-				<div className='text-center max-w-2xl mx-auto mb-16'>
-					<p className='text-accent font-semibold text-sm uppercase tracking-wider mb-3'>
-						{t(s.badge)}
+		<section id='services' className='relative py-16 sm:py-20 md:py-28 overflow-hidden'>
+			<div
+				className='pointer-events-none absolute inset-0'
+				aria-hidden
+				style={{
+					background:
+						"radial-gradient(ellipse 70% 50% at 10% 0%, hsl(217 72% 48% / 0.08), transparent), radial-gradient(ellipse 50% 40% at 100% 100%, hsl(25 95% 55% / 0.06), transparent)",
+				}}
+			/>
+
+			<div className='container relative'>
+				<div className='flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 md:mb-14'>
+					<div>
+						<p className='text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-2'>
+							{t(s.badge)}
+						</p>
+						<h2 className='font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight'>
+							{t(s.heading)}
+						</h2>
+					</div>
+					<p className='text-muted-foreground text-sm sm:text-base max-w-xs sm:text-right'>
+						{t(s.aside)}
 					</p>
-					<h2 className='text-3xl md:text-5xl font-heading font-bold text-foreground mb-4'>
-						{t(s.heading)}
-					</h2>
-					<p className='text-muted-foreground text-lg'>{t(s.subtitle)}</p>
 				</div>
 
-				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-					{s.items.map((item, i) => {
-						const Icon = icons[i];
-						const featured = i === 0;
+				{/* Featured — instant eye-catch */}
+				<div className='group relative mb-4 sm:mb-5 rounded-2xl sm:rounded-3xl bg-foreground text-primary-foreground overflow-hidden'>
+					<div
+						className='absolute inset-0 opacity-[0.07]'
+						aria-hidden
+						style={{
+							backgroundImage:
+								"linear-gradient(135deg, transparent 40%, hsl(25 95% 55%) 100%)",
+						}}
+					/>
+					<div className='relative flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-6 sm:p-8 md:p-10'>
+						<div className='flex items-center gap-4 md:flex-col md:items-start shrink-0'>
+							<div className='w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:scale-105 transition-transform duration-300'>
+								<Map size={30} className='text-accent-foreground' />
+							</div>
+							<span className='font-display text-5xl sm:text-6xl md:text-7xl font-bold text-primary-foreground/15 leading-none md:hidden'>
+								01
+							</span>
+						</div>
+
+						<div className='flex-1 min-w-0'>
+							<p className='text-accent text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] mb-2'>
+								{t(s.featuredLabel)}
+							</p>
+							<h3 className='font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight'>
+								{t(featured.title)}
+							</h3>
+							<p className='mt-3 sm:mt-4 text-sm sm:text-base text-primary-foreground/65 tracking-wide'>
+								{t(featured.tag)}
+							</p>
+						</div>
+
+						<span className='hidden md:block font-display text-[7rem] lg:text-[9rem] font-bold leading-none text-primary-foreground/[0.08] select-none'>
+							01
+						</span>
+					</div>
+				</div>
+
+				{/* Secondary services — colorful grid */}
+				<div className='grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4'>
+					{rest.map((item, i) => {
+						const Icon = icons[i + 1];
+						const num = String(i + 2).padStart(2, "0");
+						const theme = cardThemes[i % cardThemes.length];
 						return (
 							<div
 								key={i}
-								className={`relative rounded-2xl p-8 border transition-all hover:-translate-y-1 hover:shadow-lg ${
-									featured
-										? "md:col-span-2 bg-primary text-primary-foreground border-primary shadow-md"
-										: "bg-card border-border shadow-sm"
-								}`}
+								className={`group relative flex flex-col justify-between min-h-[140px] sm:min-h-[180px] p-4 sm:p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:brightness-110 ${theme.shell}`}
 							>
-								<span
-									className={`absolute top-6 right-8 text-5xl font-heading font-bold ${
-										featured ? "text-primary-foreground/15" : "text-accent/15"
-									}`}
-								>
-									{String(i + 1).padStart(2, "0")}
-								</span>
-								<div
-									className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${
-										featured ? "bg-primary-foreground/15" : "bg-primary/10"
-									}`}
-								>
-									<Icon
-										size={28}
-										className={
-											featured ? "text-primary-foreground" : "text-primary"
-										}
-									/>
+								<div className='flex items-start justify-between gap-2'>
+									<div
+										className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center ${theme.icon}`}
+									>
+										<Icon size={22} />
+									</div>
+									<span
+										className={`font-display text-2xl sm:text-3xl font-bold leading-none ${theme.num}`}
+									>
+										{num}
+									</span>
 								</div>
-								<h3
-									className={`text-2xl  font-heading font-semibold mb-2 ${
-										featured ? "text-primary-foreground" : "text-foreground"
-									}`}
-								>
-									{t(item.title)}
-								</h3>
-								<p
-									className={`text-sm leading-relaxed ${
-										featured
-											? "text-primary-foreground/80"
-											: "text-muted-foreground"
-									}`}
-								>
-									{t(item.description)}
-								</p>
+
+								<div className='mt-6 sm:mt-8'>
+									<h3 className='font-heading font-bold text-sm sm:text-lg leading-snug'>
+										{t(item.title)}
+									</h3>
+									<p className={`mt-1.5 text-[11px] sm:text-xs leading-relaxed ${theme.tag}`}>
+										{t(item.tag)}
+									</p>
+								</div>
 							</div>
 						);
 					})}
-
-					{/* <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:col-span-2 lg:col-span-3 rounded-2xl p-8 bg-whatsapp text-whatsapp-foreground flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all"
-          >
-            <span className="flex items-center gap-4">
-              <MessageCircle size={32} />
-              <span className="text-xl md:text-2xl font-heading font-bold">{t(s.cta)}</span>
-            </span>
-            <span className="text-sm font-semibold text-whatsapp-foreground/80">+880 1722 881393</span>
-          </a> */}
 				</div>
 			</div>
 		</section>

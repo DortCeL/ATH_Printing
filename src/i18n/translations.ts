@@ -21,81 +21,84 @@ export const translations = {
 
 	// Hero
 	hero: {
-		badge: {
-			en: "Professional Printing Services",
-			bn: "পেশাদার প্রিন্টিং সেবা",
+		companyName: {
+			en: "AutoCAD Training Home",
+			bn: "অটোক্যাড ট্রেনিং হোম",
 		},
-		heading1: { en: "AutoCAD ", bn: "অটোক্যাড " },
-		heading2: { en: "Training Home", bn: "ট্রেনিং হোম" },
-		heading3: { en: "ATH", bn: "এ টি এইচ" },
+		companyAbbr: { en: "ATH", bn: "এ টি এইচ" },
 		description: {
-			en: "Maps, architectural plans, engineering drawings - printed with precision, speed, and unmatched quality. Trusted by professionals across industries.",
-			bn: "ম্যাপকপি, স্থাপত্য নকশা, ইঞ্জিনিয়ারিং ড্রয়িং - নির্ভুলতা, গতি এবং অতুলনীয় মানের সাথে প্রিন্ট করা হয়। সকল শিল্পের পেশাদারদের বিশ্বস্ত।",
+			en: "Maps, architectural plans, and engineering drawings — printed with precision, speed, and unmatched quality. Trusted by professionals across industries since 1994.",
+			bn: "ম্যাপকপি, স্থাপত্য নকশা এবং ইঞ্জিনিয়ারিং ড্রয়িং — নির্ভুলতা, গতি ও অতুলনীয় মানে প্রিন্ট। ১৯৯৪ সাল থেকে সকল শিল্পের পেশাদারদের বিশ্বস্ত অংশীদার।",
 		},
-		viewPricing: { en: "View Pricing", bn: "মূল্য দেখুন" },
+		/** CEO / proprietor numbers — add more here anytime */
+		proprietor_phone_numbers: ["01711825803", "01971825803"],
 	},
 
 	// Services
 	services: {
-		badge: { en: "What We Do", bn: "আমরা যা করি" },
+		badge: { en: "Services", bn: "সেবাসমূহ" },
 		heading: {
-			en: "Every Print Job. One Trusted Partner.",
-			bn: "সব ধরনের প্রিন্ট। এক বিশ্বস্ত প্রতিষ্ঠান।",
+			en: "What We Print",
+			bn: "আমরা যা প্রিন্ট করি",
 		},
-		subtitle: {
-			en: "From a single A4 photocopy to 60,000 large-format maps, ATH has delivered it all since 1994.",
-			bn: "একটি A4 ফটোকপি থেকে ৬০,০০০ বড় ফরম্যাটের মানচিত্র, ১৯৯৪ সাল থেকে ATH সবই সরবরাহ করেছে।",
+		aside: {
+			en: "A0 to A4 · Maps to finish",
+			bn: "A0 থেকে A4 · ম্যাপ থেকে ফিনিশ",
 		},
+		featuredLabel: { en: "Flagship", bn: "মূল সেবা" },
 		items: [
 			{
 				title: {
-					en: "Map Copy & Blueprint Printing",
-					bn: "ম্যাপ কপি ও ব্লুপ্রিন্ট প্রিন্টিং",
+					en: "Map Copy & Blueprint",
+					bn: "ম্যাপ কপি ও ব্লুপ্রিন্ট",
 				},
-				description: {
-					en: "Mouza maps, cadastral sheets, tracing and ammonia blueprints — our specialty since 1996.",
-					bn: "মৌজা ম্যাপ, ভূমি নকশা, ট্রেসিং ও অ্যামোনিয়া ব্লুপ্রিন্ট — ১৯৯৬ সাল থেকে আমাদের বিশেষত্ব।",
+				tag: {
+					en: "Mouza maps · Cadastral · Tracing · Ammonia",
+					bn: "মৌজা ম্যাপ · ভূমি নকশা · ট্রেসিং · অ্যামোনিয়া",
+				},
+				featured: true,
+			},
+			{
+				title: {
+					en: "Large Format",
+					bn: "বড় ফরম্যাট",
+				},
+				tag: {
+					en: "Plot & scan A0–A4 · up to 42″",
+					bn: "প্লট ও স্ক্যান A0–A4 · ৪২″ পর্যন্ত",
 				},
 			},
 			{
 				title: {
-					en: "Large Format Printing & Scanning (A0–A4)",
-					bn: "বড় ফরম্যাট প্রিন্টিং ও স্ক্যানিং (A0–A4)",
+					en: "Photocopy",
+					bn: "ফটোকপি",
 				},
-				description: {
-					en: 'Up to 42" wide plotters for architectural plans and engineering drawings, plus precision scanning.',
-					bn: 'স্থাপত্য নকশা ও ইঞ্জিনিয়ারিং ড্রয়িংয়ের জন্য ৪২" পর্যন্ত প্লটার, সাথে নির্ভুল স্ক্যানিং।',
-				},
-			},
-			{
-				title: {
-					en: "Photocopy & Document Printing",
-					bn: "ফটোকপি ও ডকুমেন্ট প্রিন্টিং",
-				},
-				description: {
-					en: "High-volume photocopying and document runs — up to 20,000 A4 copies every single day.",
-					bn: "উচ্চ-পরিমাণ ফটোকপি ও ডকুমেন্ট প্রিন্ট — প্রতিদিন ২০,০০০ A4 কপি পর্যন্ত।",
+				tag: {
+					en: "High volume · 20,000 A4 / day",
+					bn: "উচ্চ পরিমাণ · দৈনিক ২০,০০০ A4",
 				},
 			},
 			{
 				title: {
-					en: "Color & Black / White Printing",
-					bn: "রঙিন ও সাদা-কালো প্রিন্টিং",
+					en: "Color & B/W",
+					bn: "রঙিন ও সাদা-কালো",
 				},
-				description: {
-					en: "Vivid, colour-accurate output on 100 GSM and offset paper, or crisp economical B/W.",
-					bn: "১০০ GSM ও অফসেট কাগজে উজ্জ্বল, নির্ভুল রঙিন আউটপুট, অথবা পরিষ্কার সাশ্রয়ী সাদা-কালো।",
+				tag: {
+					en: "100 GSM · Offset · Crisp output",
+					bn: "১০০ GSM · অফসেট · স্পষ্ট আউটপুট",
 				},
 			},
 			{
-				title: { en: "Binding & Lamination", bn: "বাইন্ডিং ও লেমিনেশন" },
-				description: {
-					en: 'Finish your project properly — professional binding and lamination up to 36" wide.',
-					bn: 'আপনার কাজ সম্পূর্ণ করুন — ৩৬" পর্যন্ত পেশাদার বাইন্ডিং ও লেমিনেশন।',
+				title: {
+					en: "Binding & Lamination",
+					bn: "বাইন্ডিং ও লেমিনেশন",
+				},
+				tag: {
+					en: "Pro finish · up to 36″ wide",
+					bn: "প্রো ফিনিশ · ৩৬″ পর্যন্ত",
 				},
 			},
 		],
-		cta: { en: "Send Your Files on WhatsApp", bn: "WhatsApp-এ ফাইল পাঠান" },
 	},
 
 	// Overview
@@ -245,79 +248,68 @@ export const translations = {
 
 	// Machinery
 	machinery: {
-		badge: { en: "Our Machinery", bn: "Our Machinery" },
+		badge: { en: "Machinery", bn: "যন্ত্রপাতি" },
 		heading: {
-			en: "An Arsenal of Industrial Printing Power",
-			bn: "An Arsenal of Industrial Printing Power",
+			en: "Our Fleet",
+			bn: "আমাদের যন্ত্রপাতি",
 		},
-		subtitle: {
-			en: "One of the largest fleets of large-format plotters in Bangladesh — backed by air-conditioned rooms and standby power for zero downtime.",
-			bn: "One of the largest fleets of large-format plotters in Bangladesh — backed by air-conditioned rooms and standby power for zero downtime.",
+		aside: {
+			en: "Zero downtime · AC rooms · Standby power",
+			bn: "জিরো ডাউনটাইম · এসি রুম · স্ট্যান্ডবাই পাওয়ার",
 		},
 		machines: [
 			{
-				name: { en: "Large Format Plotters", bn: "Large Format Plotters" },
-				count: 15,
-				detail: { en: '24" · 36" · 42" widths', bn: '24" · 36" · 42" widths' },
+				name: { en: "Large Format Plotters", bn: "বড় ফরম্যাট প্লটার" },
+				count: "15",
+				tag: { en: '24″ · 36″ · 42″', bn: '২৪″ · ৩৬″ · ৪২″' },
+				featured: true,
 			},
 			{
-				name: { en: '36" Map Copiers', bn: '36" Map Copiers' },
-				count: 6,
-				detail: {
-					en: "High-volume map duplication",
-					bn: "High-volume map duplication",
-				},
+				name: { en: 'Map Copiers', bn: "ম্যাপ কপিয়ার" },
+				count: "6",
+				tag: { en: '36″ high-volume', bn: "৩৬″ উচ্চ পরিমাণ" },
 			},
 			{
-				name: { en: "Ammonia Printers", bn: "Ammonia Printers" },
-				count: 4,
-				detail: {
-					en: "Classic blueprint output",
-					bn: "Classic blueprint output",
-				},
+				name: { en: "Ammonia Printers", bn: "অ্যামোনিয়া প্রিন্টার" },
+				count: "4",
+				tag: { en: "Classic blueprints", bn: "ক্লাসিক ব্লুপ্রিন্ট" },
 			},
 			{
-				name: { en: "A3 Printers", bn: "A3 Printers" },
-				count: 10,
-				detail: {
-					en: "Everyday document printing",
-					bn: "Everyday document printing",
-				},
+				name: { en: "A3 Printers", bn: "A3 প্রিন্টার" },
+				count: "10",
+				tag: { en: "Document runs", bn: "ডকুমেন্ট প্রিন্ট" },
 			},
 			{
-				name: { en: "A3 Photocopiers", bn: "A3 Photocopiers" },
-				count: 6,
-				detail: {
-					en: "4 color + 2 black & white",
-					bn: "4 color + 2 black & white",
-				},
+				name: { en: "A3 Photocopiers", bn: "A3 ফটোকপিয়ার" },
+				count: "6",
+				tag: { en: "4 color · 2 B/W", bn: "৪ রঙিন · ২ সাদা-কালো" },
 			},
 			{
-				name: { en: "Lamination Machines", bn: "Lamination Machines" },
-				count: 3,
-				detail: { en: 'Up to 36" width', bn: 'Up to 36" width' },
+				name: { en: "Laminators", bn: "লেমিনেটর" },
+				count: "3",
+				tag: { en: 'Up to 36″', bn: "৩৬″ পর্যন্ত" },
 			},
 		],
-		extras: {
-			computers: { en: "Computers", bn: "Computers" },
-			generators: { en: "Standby Generators", bn: "Standby Generators" },
-		},
+		extras: [
+			{ count: "8", label: { en: "Computers", bn: "কম্পিউটার" } },
+			{ count: "3", label: { en: "Generators", bn: "জেনারেটর" } },
+		],
 		imageAlt: {
 			en: "Large format plotter printing a detailed map",
-			bn: "Large format plotter printing a detailed map",
+			bn: "বড় ফরম্যাট প্লটারে ম্যাপ প্রিন্টিং",
 		},
 		capacityHeading: {
-			en: "Daily Printing Capacity",
-			bn: "Daily Printing Capacity",
+			en: "Daily Capacity",
+			bn: "দৈনিক সক্ষমতা",
 		},
-		capacityUnit: { en: "copies / day", bn: "copies / day" },
+		capacityUnit: { en: "/ day", bn: "/ দিন" },
 		capacity: [
-			{ size: "A4", value: "20,000" },
-			{ size: "A3 Color", value: "10,000" },
-			{ size: "A2", value: "6,000" },
-			{ size: "A1", value: "4,000" },
-			{ size: "E0", value: "3,000" },
-			{ size: "A0", value: "2,000" },
+			{ size: "A4", value: "20K" },
+			{ size: "A3", value: "10K" },
+			{ size: "A2", value: "6K" },
+			{ size: "A1", value: "4K" },
+			{ size: "E0", value: "3K" },
+			{ size: "A0", value: "2K" },
 		],
 	},
 
@@ -509,8 +501,11 @@ export const translations = {
 			en: "We have 3 convenient locations across Dhaka. Drop in anytime during business hours.",
 			bn: "ঢাকা জুড়ে আমাদের ৩টি সুবিধাজনক শাখা রয়েছে। ব্যবসায়িক সময়ে যেকোনো সময় আসুন।",
 		},
-		hours: { en: "Sat–Thu: 9AM – 9PM", bn: "শনি–বৃহঃ: সকাল ৯টা – রাত ৯টা" },
+		hours: { en: "Sat–Thu: 9:00 AM – 9:00 PM", bn: "শনি–বৃহঃ: সকাল ৯টা – রাত ৯টা" },
+		closed: { en: "Friday closed", bn: "শুক্রবার বন্ধ" },
 		getDirections: { en: "Get Directions", bn: "দিকনির্দেশনা নিন" },
+		call: { en: "Call", bn: "কল করুন" },
+		manager: { en: "Branch Manager", bn: "শাখা ব্যবস্থাপক" },
 		shops: [
 			{
 				name: { en: "Farmgate", bn: "ফার্মগেট" },
@@ -518,9 +513,11 @@ export const translations = {
 					en: "79 Green Road, Greenview Super Market (Ground floor), South of Ananda Cinema Hall, beside UCC Book House, Dhaka-1215",
 					bn: "৭৯ গ্রীন রোড, গ্রীনভিউ সুপার মার্কেট (নীচ তলা), আনন্দ সিনেমা হলের দক্ষিণে, UCC Book House এর পাশে, ঢাকা-১২১৫",
 				},
+				phone: "01971-825803",
+				phoneTel: "+8801971825803",
+				whatsapp: "8801971825803",
 				mapUrl:
 					"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d293.02036321553464!2d90.38966164384365!3d23.755977485304587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a3efb84a0d%3A0xd7a5c7c6f784315e!2sGreen%20View%20Super%20Market%2C%20Dhaka%201205!5e1!3m2!1sen!2sbd!4v1773072999294!5m2!1sen!2sbd",
-
 				directionsUrl:
 					"https://www.google.com/maps/dir/?api=1&destination=23.755974416624632,90.38966231439589",
 			},
@@ -530,6 +527,9 @@ export const translations = {
 					en: "Mirpur 10 Folpotti, Masjid Road, East of Baitul Mamur Masjid, Samad Plaza 2nd Floor, Dhaka-1216",
 					bn: "মিরপুর ১০ ফলপট্টি, মসজিদ রোড, বাইতুল মামুর মসজিদের পূর্ব পাশে, সামাদ প্লাজা ২য় তলা, ঢাকা-১২১৬",
 				},
+				phone: "01711-825803",
+				phoneTel: "+8801711825803",
+				whatsapp: "8801711825803",
 				mapUrl:
 					"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d292.90723467546263!2d90.36796806492002!3d23.806186185357053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0d6418c9adb%3A0x16e3ab67b799cd1c!2sMurad%20Surgical!5e1!3m2!1sen!2sbd!4v1773073366654!5m2!1sen!2sbd",
 				directionsUrl:
@@ -541,9 +541,11 @@ export const translations = {
 					en: "31/4, Colombia Super Market (3rd Floor), Mohakhali Wireless Gate, East of Titumir college, Dhaka-1215",
 					bn: "৩১/৪, কলম্বিয়া সুপার মার্কেট (৩য় তলা), মহাখালী ওয়্যারলেস গেট, তিতুমীর কলেজের পূর্ব পাশে, ঢাকা–১২১৫",
 				},
+				phone: "01785-600774",
+				phoneTel: "+8801785600774",
+				whatsapp: "8801785600774",
 				mapUrl:
 					"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d620.7698815009318!2d90.40548587043875!3d23.78084866113725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7722b975f65%3A0x92328406030ab070!2sColombia%20Super%20Market!5e1!3m2!1sen!2sbd!4v1773074197451!5m2!1sen!2sbd",
-
 				directionsUrl:
 					"https://www.google.com/maps/dir/?api=1&destination=23.78083435879612,90.40515907474985",
 			},
@@ -553,26 +555,46 @@ export const translations = {
 	// Contact
 	contact: {
 		badge: { en: "Contact Us", bn: "যোগাযোগ করুন" },
-		heading: { en: "Ready to Print?", bn: "প্রিন্ট করতে প্রস্তুত?" },
+		heading: { en: "Three Branches. One Team.", bn: "তিনটি শাখা। এক দল।" },
 		subtitle: {
-			en: "Send us your files and we'll have your prints ready in no time. WhatsApp is the fastest way to reach us.",
-			bn: "আমাদের আপনার ফাইল পাঠান এবং আমরা দ্রুত আপনার প্রিন্ট তৈরি করব। WhatsApp আমাদের সাথে যোগাযোগের সবচেয়ে দ্রুত উপায়।",
+			en: "Reach the branch nearest you — call the manager directly, message on WhatsApp, or drop in during open hours.",
+			bn: "আপনার কাছের শাখায় যোগাযোগ করুন — ব্যবস্থাপককে সরাসরি কল করুন, WhatsApp-এ মেসেজ দিন, অথবা খোলার সময়ে আসুন।",
 		},
+		hoursLabel: { en: "Open hours", bn: "খোলার সময়" },
+		phoneLabel: { en: "Manager phone", bn: "ব্যবস্থাপকের ফোন" },
+		addressLabel: { en: "Address", bn: "ঠিকানা" },
 		whatsapp: { en: "WhatsApp", bn: "WhatsApp" },
-		phone: { en: "Phone", bn: "ফোন" },
+		callBranch: { en: "Call branch", bn: "শাখায় কল করুন" },
+		directions: { en: "Directions", bn: "দিকনির্দেশনা" },
 		email: { en: "Email", bn: "ইমেইল" },
-		location: { en: "Location", bn: "অবস্থান" },
-		locationValue: { en: "Dhaka, Bangladesh", bn: "ঢাকা, বাংলাদেশ" },
-		uploadTitle: { en: "Online Order System", bn: "অনলাইন অর্ডার সিস্টেম" },
-		uploadDesc: {
-			en: "Upload files or share Google Drive links to submit print jobs directly. Coming soon!",
-			bn: "সরাসরি প্রিন্ট জব জমা দিতে ফাইল আপলোড করুন বা Google Drive লিঙ্ক শেয়ার করুন। শীঘ্রই আসছে!",
+		emailValue: { en: "info@athprinting.com", bn: "info@athprinting.com" },
+		centralWhatsApp: {
+			en: "Prefer a general inquiry?",
+			bn: "সাধারণ জিজ্ঞাসা?",
 		},
-		comingSoon: { en: "Coming Soon", bn: "শীঘ্রই আসছে" },
+		centralWhatsAppCta: {
+			en: "Message ATH on WhatsApp",
+			bn: "ATH-কে WhatsApp-এ মেসেজ করুন",
+		},
 	},
 
 	// Footer
 	footer: {
+		tagline: {
+			en: "Professional large-format printing since 1994. Maps, plans, and engineering drawings — done right.",
+			bn: "১৯৯৪ সাল থেকে পেশাদার বড় ফরম্যাট প্রিন্টিং। ম্যাপ, নকশা ও ইঞ্জিনিয়ারিং ড্রয়িং — সঠিকভাবে।",
+		},
+		explore: { en: "Explore", bn: "ঘুরে দেখুন" },
+		branches: { en: "Branches", bn: "শাখাসমূহ" },
+		reachUs: { en: "Reach Us", bn: "যোগাযোগ" },
+		hours: { en: "Hours", bn: "সময়সূচি" },
+		hoursValue: {
+			en: "Sat–Thu · 9:00 AM – 9:00 PM",
+			bn: "শনি–বৃহঃ · সকাল ৯টা – রাত ৯টা",
+		},
+		closed: { en: "Friday closed", bn: "শুক্রবার বন্ধ" },
+		ceoPhones: { en: "CEO / Proprietor", bn: "প্রোপ্রাইটর" },
+		whatsappCta: { en: "Chat on WhatsApp", bn: "WhatsApp-এ চ্যাট করুন" },
 		rights: { en: "All rights reserved.", bn: "সর্বস্বত্ব সংরক্ষিত।" },
 	},
 

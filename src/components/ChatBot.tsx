@@ -31,7 +31,7 @@ const ChatBot = () => {
             setMessages([{ from: "bot", text: t(cb.greeting) }]);
             setOpen(true);
           }}
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -39,7 +39,7 @@ const ChatBot = () => {
       )}
 
       {open && (
-        <div className="fixed bottom-6 right-6 z-50 w-[340px] max-h-[480px] flex flex-col bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[min(340px,calc(100vw-2rem))] max-h-[min(480px,70vh)] flex flex-col bg-card rounded-2xl shadow-2xl border border-border overflow-hidden">
           <div className="flex items-center justify-between px-4 py-3 bg-primary text-primary-foreground">
             <span className="font-heading font-semibold text-sm">{t(cb.title)}</span>
             <button onClick={() => setOpen(false)} aria-label="Close chat">
