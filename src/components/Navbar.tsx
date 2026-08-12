@@ -9,20 +9,21 @@ const navLinks = [
 	{ key: "works" as const, href: "#works", id: "works" },
 	{ key: "machinery" as const, href: "#machinery", id: "machinery" },
 	{ key: "locations" as const, href: "#locations", id: "locations" },
-	// { key: "contact" as const, href: "#contact", id: "contact" },
 ];
 
 const WHATSAPP_URL =
 	"https://wa.me/8801785600774?text=Hi%20ATH%2C%20I%20want%20to%20place%20a%20print%20order";
+
+const HINT_KEY = "ath-lang-hint-seen";
 
 const shell =
 	"w-full max-w-[90rem] mx-auto px-3 sm:px-5 md:px-8 lg:px-12 xl:px-16";
 
 const getNavOffset = () => (window.innerWidth < 768 ? 130 : 100);
 
-const resolveActiveSection = () => {
+const resolveActiveSection = (): string | null => {
 	const offset = getNavOffset();
-	let current = navLinks[0].id;
+	let current: string | null = null;
 
 	for (const link of navLinks) {
 		const el = document.getElementById(link.id);
@@ -43,7 +44,8 @@ const scrollToSection = (id: string) => {
 };
 
 const Navbar = () => {
-	const [activeId, setActiveId] = useState("overview");
+	const [activeId, setActiveId] = useState<string | null>(null);
+	const [showLangHint, setShowLangHint] = useState(false);
 	const { lang, setLang, t } = useLanguage();
 	const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 	const lockActiveRef = useRef(false);
@@ -67,10 +69,29 @@ const Navbar = () => {
 	}, []);
 
 	useEffect(() => {
-		if (window.innerWidth >= 768) return;
+		try {
+			if (localStorage.getItem(HINT_KEY)) return;
+		} catch {
+			/* ignore */
+		}
+		const timer = window.setTimeout(() => setShowLangHint(true), 900);
+		return () => window.clearTimeout(timer);
+	}, []);
+
+	useEffect(() => {
+		if (!activeId || window.innerWidth >= 768) return;
 		const el = linkRefs.current[activeId];
 		el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
 	}, [activeId]);
+
+	const dismissLangHint = () => {
+		setShowLangHint(false);
+		try {
+			localStorage.setItem(HINT_KEY, "1");
+		} catch {
+			/* ignore */
+		}
+	};
 
 	const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
 		e.preventDefault();
@@ -86,7 +107,11 @@ const Navbar = () => {
 		}, 900);
 	};
 
-	const toggleLang = () => setLang(lang === "en" ? "bn" : "en");
+	const toggleLang = () => {
+		dismissLangHint();
+		setLang(lang === "en" ? "bn" : "en");
+	};
+
 	const langLabelShort = lang === "en" ? "বাং" : "En";
 	const langLabelFull = lang === "en" ? "Bangla" : "English";
 
@@ -97,11 +122,12 @@ const Navbar = () => {
 				: "text-white/65 hover:text-white hover:bg-white/10"
 		}`;
 
+	const langButtonClass =
+		"relative shrink-0 flex items-center gap-1.5 rounded-md font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors";
+
 	return (
 		<nav className='fixed top-0 inset-x-0 z-50 text-white shadow-lg'>
-			{/* ——— Phone: 3 layers ——— */}
 			<div className='md:hidden'>
-				{/* Top — pure black */}
 				<div className='bg-black border-b border-white/10'>
 					<div className={shell}>
 						<a
@@ -114,27 +140,46 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				{/* Mid — softer black */}
 				<div className='bg-[#1a1a1a] border-b border-white/10'>
 					<div className={`${shell} flex items-center justify-between gap-3 py-1.5`}>
 						<a
 							href='#'
-							className='font-heading font-bold text-sm leading-tight tracking-wide text-red-500'
+							className='font-heading font-bold text-sm leading-tight tracking-wide text-red-500 truncate min-w-0'
 						>
 							AutoCAD Training Home
 						</a>
-						<button
-							onClick={toggleLang}
-							className='shrink-0 flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors'
-							aria-label='Toggle language'
-						>
-							<Globe size={14} />
-							<span>{langLabelFull}</span>
-						</button>
+						<div className='relative flex items-center gap-2'>
+							{showLangHint && (
+								<div
+									id='lang-hint'
+									role='status'
+									className='max-w-[9.5rem] rounded-md bg-accent text-accent-foreground px-2 py-1 text-[10px] leading-snug font-semibold shadow-md animate-fade-in-up'
+								>
+									{t(translations.nav.langHint)}
+									<button
+										type='button'
+										onClick={dismissLangHint}
+										className='ml-2 underline decoration-accent-foreground/50 underline-offset-2 opacity-80 hover:opacity-100'
+									>
+										OK
+									</button>
+								</div>
+							)}
+							<button
+								onClick={toggleLang}
+								className={`${langButtonClass} px-2 py-1 text-xs ${
+									showLangHint ? "ring-2 ring-accent/70 text-white bg-white/10" : ""
+								}`}
+								aria-label='Toggle language'
+								aria-describedby={showLangHint ? "lang-hint" : undefined}
+							>
+								<Globe size={14} className={showLangHint ? "animate-pulse" : ""} />
+								<span>{langLabelFull}</span>
+							</button>
+						</div>
 					</div>
 				</div>
 
-				{/* Links — same soft black */}
 				<div className='bg-[#1a1a1a]'>
 					<div className='overflow-x-auto scrollbar-none'>
 						<div className='flex items-center gap-1.5 px-3 py-1.5 min-w-max'>
@@ -159,7 +204,7 @@ const Navbar = () => {
 								href={WHATSAPP_URL}
 								target='_blank'
 								rel='noopener noreferrer'
-								className='ml-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-whatsapp text-whatsapp-foreground whitespace-nowrap'
+								className='ml-4 px-3 py-1.5 rounded-full text-xs font-semibold bg-whatsapp text-whatsapp-foreground whitespace-nowrap'
 							>
 								WhatsApp
 							</a>
@@ -168,9 +213,7 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{/* ——— Tablet + desktop: 2 layers ——— */}
 			<div className='hidden md:block'>
-				{/* Top — pure black: email + language */}
 				<div className='bg-black border-b border-white/10'>
 					<div className={`${shell} relative flex items-center justify-center py-1 md:py-1.5`}>
 						<a
@@ -180,18 +223,38 @@ const Navbar = () => {
 						>
 							ath_cad@yahoo.com
 						</a>
-						<button
-							onClick={toggleLang}
-							className='absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 lg:px-3 py-1 rounded-md text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors'
-							aria-label='Toggle language'
-						>
-							<Globe size={14} />
-							<span>{langLabelShort}</span>
-						</button>
+						<div className='absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2'>
+							{showLangHint && (
+								<div
+									id='lang-hint-desktop'
+									role='status'
+									className='rounded-md bg-accent text-accent-foreground px-2.5 py-1 text-xs font-semibold shadow-md whitespace-nowrap animate-fade-in-up'
+								>
+									{t(translations.nav.langHint)}
+									<button
+										type='button'
+										onClick={dismissLangHint}
+										className='ml-1.5 underline decoration-accent-foreground/50 underline-offset-2 opacity-80 hover:opacity-100'
+									>
+										OK
+									</button>
+								</div>
+							)}
+							<button
+								onClick={toggleLang}
+								className={`${langButtonClass} px-2.5 lg:px-3 py-1 text-sm ${
+									showLangHint ? "ring-2 ring-accent/70 text-white bg-white/10" : ""
+								}`}
+								aria-label='Toggle language'
+								aria-describedby={showLangHint ? "lang-hint-desktop" : undefined}
+							>
+								<Globe size={14} className={showLangHint ? "animate-pulse" : ""} />
+								<span>{langLabelShort}</span>
+							</button>
+						</div>
 					</div>
 				</div>
 
-				{/* Bottom — softer black: brand + nav */}
 				<div className='bg-[#1a1a1a]'>
 					<div className={`${shell} flex items-center justify-between gap-4 lg:gap-8 py-1.5 md:py-2`}>
 						<a
@@ -219,7 +282,7 @@ const Navbar = () => {
 								href={WHATSAPP_URL}
 								target='_blank'
 								rel='noopener noreferrer'
-								className='ml-1 px-3 lg:px-3.5 py-1.5 rounded-sm hover:bg-whatsapp/80 transition-colors text-xs md:text-sm font-semibold bg-whatsapp text-whatsapp-foreground whitespace-nowrap'
+								className='ml-4 lg:ml-5 px-3 lg:px-3.5 py-1.5 rounded-sm hover:bg-whatsapp/80 transition-colors text-xs md:text-sm font-semibold bg-whatsapp text-whatsapp-foreground whitespace-nowrap'
 							>
 								WhatsApp
 							</a>

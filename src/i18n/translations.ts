@@ -17,6 +17,10 @@ export const translations = {
 			en: "Contact via WhatsApp",
 			bn: "WhatsApp-এ যোগাযোগ করুন",
 		},
+		langHint: {
+			en: "Switch language",
+			bn: "ভাষা বদলান",
+		},
 	},
 
 	// Hero
