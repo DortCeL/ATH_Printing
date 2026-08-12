@@ -12,7 +12,7 @@ const FAQSection = () => {
   const f = translations.faq;
 
   return (
-    <section id="faq" className="py-16 sm:py-20 md:py-28 bg-surface-blue">
+    <section id="faq" className="py-16 sm:py-20 md:py-28 bg-background">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">{t(f.badge)}</p>
@@ -25,7 +25,7 @@ const FAQSection = () => {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm"
+                className="bg-card border border-white/10 rounded-xl px-6 data-[state=open]:border-accent/30 data-[state=open]:shadow-lg data-[state=open]:shadow-black/20"
               >
                 <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
                   {t(faq.q)}

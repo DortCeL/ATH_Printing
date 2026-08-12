@@ -37,7 +37,7 @@ const ServicesSection = () => {
 	const [featured, ...rest] = s.items;
 
 	return (
-		<section id='services' className='relative py-16 sm:py-20 md:py-28 overflow-hidden'>
+		<section id='services' className='relative py-16 sm:py-20 md:py-28 overflow-hidden bg-surface-blue'>
 			<div
 				className='pointer-events-none absolute inset-0'
 				aria-hidden
@@ -63,9 +63,9 @@ const ServicesSection = () => {
 				</div>
 
 				{/* Featured — instant eye-catch */}
-				<div className='group relative mb-4 sm:mb-5 rounded-2xl sm:rounded-3xl bg-foreground text-primary-foreground overflow-hidden'>
+				<div className='group relative mb-4 sm:mb-5 rounded-2xl sm:rounded-3xl bg-surface-deep text-foreground overflow-hidden border border-white/10'>
 					<div
-						className='absolute inset-0 opacity-[0.07]'
+						className='absolute inset-0 opacity-[0.12]'
 						aria-hidden
 						style={{
 							backgroundImage:
@@ -77,7 +77,7 @@ const ServicesSection = () => {
 							<div className='w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:scale-105 transition-transform duration-300'>
 								<Map size={30} className='text-accent-foreground' />
 							</div>
-							<span className='font-display text-5xl sm:text-6xl md:text-7xl font-bold text-primary-foreground/15 leading-none md:hidden'>
+							<span className='font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white/15 leading-none md:hidden'>
 								01
 							</span>
 						</div>
@@ -89,12 +89,12 @@ const ServicesSection = () => {
 							<h3 className='font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight'>
 								{t(featured.title)}
 							</h3>
-							<p className='mt-3 sm:mt-4 text-sm sm:text-base text-primary-foreground/65 tracking-wide'>
+							<p className='mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground tracking-wide'>
 								{t(featured.tag)}
 							</p>
 						</div>
 
-						<span className='hidden md:block font-display text-[7rem] lg:text-[9rem] font-bold leading-none text-primary-foreground/[0.08] select-none'>
+						<span className='hidden md:block font-display text-[7rem] lg:text-[9rem] font-bold leading-none text-white/[0.06] select-none'>
 							01
 						</span>
 					</div>

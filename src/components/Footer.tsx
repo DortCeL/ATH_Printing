@@ -162,7 +162,7 @@ const Footer = () => {
 					<p className='text-xs sm:text-sm text-white/45'>
 						© {new Date().getFullYear()} ATH — AutoCAD Training Home. {t(f.rights)}
 					</p>
-					<p className='text-xs text-white/35'>Farmgate · Mirpur-10 · Mohakhali</p>
+					<p className='text-xs text-white/35'>{t(f.branchesLine)}</p>
 				</div>
 			</div>
 		</footer>

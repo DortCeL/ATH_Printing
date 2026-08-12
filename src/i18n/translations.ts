@@ -4,7 +4,7 @@ export const translations = {
 	// Navbar
 	nav: {
 		overview: { en: "Overview", bn: "পরিচিতি" },
-		services: { en: "Services", bn: "সেবাসমূহ" },
+		services: { en: "Services", bn: "সার্ভিস" },
 		works: { en: "Major Works", bn: "উল্লেখযোগ্য কাজ" },
 		machinery: { en: "Machinery", bn: "যন্ত্রপাতি" },
 		pricing: { en: "Pricing", bn: "মূল্য তালিকা" },
@@ -147,100 +147,111 @@ export const translations = {
 			en: "ATH printing facility with large-format plotters",
 			bn: "এটিএইচ-এর বড় ফরম্যাটের প্লটার সম্বলিত প্রিন্টিং সুবিধা",
 		},
+		proprietor: {
+			name: { en: "Md Anwar Hossain", bn: "মোঃ আনোয়ার হোসেন" },
+			title: { en: "Proprietor", bn: "প্রোপ্রাইটর" },
+			company: {
+				en: "AutoCAD Training Home (ATH)",
+				bn: "অটোক্যাড ট্রেনিং হোম (ATH)",
+			},
+			facebook: { en: "Facebook", bn: "ফেসবুক" },
+		},
 	},
 
 	// Major Works
 	works: {
-		badge: { en: "Proven Track Record", bn: "Proven Track Record" },
+		badge: { en: "Proven Track Record", bn: "প্রমাণিত সাফল্য" },
 		heading: {
 			en: "Major Works That Speak for Themselves",
-			bn: "Major Works That Speak for Themselves",
+			bn: "আমাদের উল্লেখযোগ্য প্রজেক্ট",
 		},
 		subtitle: {
 			en: "National-scale projects delivered for government and private sector leaders.",
-			bn: "National-scale projects delivered for government and private sector leaders.",
+			bn: "সরকারি ও বেসরকারি খাতের নেতৃস্থানীয় প্রতিষ্ঠানের জন্য জাতীয় পর্যায়ের প্রকল্প সম্পন্ন।",
 		},
-		copies: { en: "copies", bn: "copies" },
+		clientLabel: { en: "Client", bn: "ক্লায়েন্ট" },
+		copies: { en: "copies", bn: "কপি" },
+		bannerTotal: { en: "211,000+", bn: "২১১,০০০+" },
 		banner: {
 			en: "copies delivered in flagship national projects",
-			bn: "copies delivered in flagship national projects",
+			bn: "কপি জাতীয় পর্যায়ের প্রধান প্রকল্পে সরবরাহ করা হয়েছে",
 		},
 		items: [
 			{
-				quantity: "60,000",
+				quantity: { en: "60,000", bn: "৬০,০০০" },
 				title: {
-					en: "Mouza Maps of Entire Bangladesh",
-					bn: "Mouza Maps of Entire Bangladesh",
+					en: "Mouza maps — entire Bangladesh",
+					bn: "সমগ্র বাংলাদেশের মৌজা ম্যাপ",
 				},
 				client: {
 					en: "Bangladesh Bureau of Statistics",
-					bn: "Bangladesh Bureau of Statistics",
+					bn: "বাংলাদেশ পরিসংখ্যান ব্যুরো",
 				},
-				year: { en: "2005", bn: "2005" },
-				note: { en: "100 GSM white paper", bn: "100 GSM white paper" },
+				year: { en: "2005", bn: "২০০৫" },
+				note: { en: "100 GSM white paper", bn: "১০০ GSM সাদা কাগজ" },
 			},
 			{
-				quantity: "60,000",
+				quantity: { en: "60,000", bn: "৬০,০০০" },
 				title: {
-					en: "Tracing & Ammonia Printing — Detailed Area Plan (DAP)",
-					bn: "Tracing & Ammonia Printing — Detailed Area Plan (DAP)",
+					en: "DAP tracing & ammonia printing",
+					bn: "DAP ট্রেসিং ও অ্যামোনিয়া প্রিন্টিং",
 				},
 				client: {
 					en: "Design Development Company (DDC)",
-					bn: "Design Development Company (DDC)",
+					bn: "ডিজাইন ডেভেলপমেন্ট কোম্পানি (DDC)",
 				},
-				year: { en: "2011", bn: "2011" },
+				year: { en: "2011", bn: "২০১১" },
 				note: {
 					en: "Large-format blueprint output",
-					bn: "Large-format blueprint output",
+					bn: "বড় ফরম্যাট ব্লুপ্রিন্ট আউটপুট",
 				},
 			},
 			{
-				quantity: "38,000",
+				quantity: { en: "38,000", bn: "৩৮,০০০" },
 				title: {
-					en: "Color Prints — Airport 3rd Terminal Project",
-					bn: "Color Prints — Airport 3rd Terminal Project",
+					en: "Color prints — Airport 3rd Terminal",
+					bn: "রঙিন প্রিন্ট — এয়ারপোর্ট ৩য় টার্মিনাল",
 				},
 				client: {
 					en: "Airport 3rd Terminal Project",
-					bn: "Airport 3rd Terminal Project",
+					bn: "এয়ারপোর্ট ৩য় টার্মিনাল প্রকল্প",
 				},
-				year: { en: "2025", bn: "2025" },
+				year: { en: "2025", bn: "২০২৫" },
 				note: {
 					en: '23"×36" 100 GSM white paper',
-					bn: '23"×36" 100 GSM white paper',
+					bn: '২৩"×৩৬" ১০০ GSM সাদা কাগজ',
 				},
 			},
 			{
-				quantity: "38,000",
+				quantity: { en: "38,000", bn: "৩৮,০০০" },
 				title: {
-					en: "Color Map of Khulna Division",
-					bn: "Color Map of Khulna Division",
+					en: "Color map — Khulna Division",
+					bn: "কালার ম্যাপ — খুলনা বিভাগ",
 				},
 				client: {
 					en: "Design Development Company (DDC)",
-					bn: "Design Development Company (DDC)",
+					bn: "ডিজাইন ডেভেলপমেন্ট কোম্পানি (DDC)",
 				},
-				year: { en: "2025", bn: "2025" },
+				year: { en: "2025", bn: "২০২৫" },
 				note: {
 					en: '30"×40" 100 GSM offset paper',
-					bn: '30"×40" 100 GSM offset paper',
+					bn: '৩০"×৪০" ১০০ GSM অফসেট কাগজ',
 				},
 			},
 			{
-				quantity: "15,000",
+				quantity: { en: "15,000", bn: "১৫,০০০" },
 				title: {
-					en: "Tracing & Ammonia Printing — DAP",
-					bn: "Tracing & Ammonia Printing — DAP",
+					en: "DAP tracing & ammonia printing",
+					bn: "DAP ট্রেসিং ও অ্যামোনিয়া প্রিন্টিং",
 				},
 				client: {
 					en: "Design Development Company (DDC)",
-					bn: "Design Development Company (DDC)",
+					bn: "ডিজাইন ডেভেলপমেন্ট কোম্পানি (DDC)",
 				},
-				year: { en: "2022–23", bn: "2022–23" },
+				year: { en: "2022–23", bn: "২০২২–২৩" },
 				note: {
 					en: "Detailed Area Plan implementation",
-					bn: "Detailed Area Plan implementation",
+					bn: "ডিটেইলড এরিয়া প্ল্যান বাস্তবায়ন",
 				},
 			},
 		],
@@ -294,9 +305,10 @@ export const translations = {
 			{ count: "8", label: { en: "Computers", bn: "কম্পিউটার" } },
 			{ count: "3", label: { en: "Generators", bn: "জেনারেটর" } },
 		],
-		imageAlt: {
-			en: "Large format plotter printing a detailed map",
-			bn: "বড় ফরম্যাট প্লটারে ম্যাপ প্রিন্টিং",
+		table: {
+			equipment: { en: "Equipment", bn: "যন্ত্রপাতি" },
+			qty: { en: "Qty", bn: "সংখ্যা" },
+			spec: { en: "Spec", bn: "বিবরণ" },
 		},
 		capacityHeading: {
 			en: "Daily Capacity",
@@ -596,6 +608,10 @@ export const translations = {
 		ceoPhones: { en: "CEO / Proprietor", bn: "প্রোপ্রাইটর" },
 		whatsappCta: { en: "Chat on WhatsApp", bn: "WhatsApp-এ চ্যাট করুন" },
 		rights: { en: "All rights reserved.", bn: "সর্বস্বত্ব সংরক্ষিত।" },
+		branchesLine: {
+			en: "Farmgate · Mirpur-10 · Mohakhali",
+			bn: "ফার্মগেট · মিরপুর-১০ · মহাখালী",
+		},
 	},
 
 	// ChatBot

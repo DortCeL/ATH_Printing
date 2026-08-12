@@ -28,7 +28,7 @@ const OverviewSection = () => {
 	];
 
 	return (
-		<section id='overview' className='py-16 sm:py-20 md:py-28'>
+		<section id='overview' className='py-16 sm:py-20 md:py-28 bg-background'>
 			<p className='text-accent text-center font-semibold text-sm sm:text-base uppercase tracking-wider mb-8 sm:mb-10 px-4'>
 				{t(o.badge)}
 			</p>
@@ -79,7 +79,7 @@ const OverviewSection = () => {
 							{stats.map((stat, i) => (
 								<div
 									key={i}
-									className='bg-card border border-border rounded-2xl p-5 text-center shadow-sm'
+									className='bg-card border border-white/10 rounded-2xl p-5 text-center shadow-lg shadow-black/20'
 								>
 									<stat.icon size={22} className='text-primary mx-auto mb-2' />
 									<div className='text-2xl md:text-3xl font-heading font-bold text-foreground'>

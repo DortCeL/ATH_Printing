@@ -62,6 +62,7 @@ export default {
         },
         "surface-warm": "hsl(var(--surface-warm))",
         "surface-blue": "hsl(var(--surface-blue))",
+        "surface-deep": "hsl(var(--surface-deep))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -11,7 +11,7 @@ const ContactSection = () => {
 	const loc = translations.locations;
 
 	return (
-		<section id='contact' className='relative py-16 sm:py-20 md:py-28 overflow-hidden'>
+		<section id='contact' className='relative py-16 sm:py-20 md:py-28 overflow-hidden bg-surface-deep'>
 			<div
 				className='pointer-events-none absolute inset-0 opacity-[0.35]'
 				aria-hidden
@@ -41,7 +41,7 @@ const ContactSection = () => {
 						return (
 							<article
 								key={i}
-								className='flex flex-col rounded-2xl border border-border bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:border-primary/25 transition-all duration-300'
+								className='flex flex-col rounded-2xl border border-white/10 bg-card/80 backdrop-blur-sm shadow-lg shadow-black/20 hover:shadow-xl hover:border-primary/30 transition-all duration-300'
 							>
 								<div className='px-5 sm:px-6 pt-6 pb-4 border-b border-border/80'>
 									<div className='flex items-start justify-between gap-3'>

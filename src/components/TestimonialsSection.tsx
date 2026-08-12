@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
   const ts = translations.testimonials;
 
   return (
-    <section id="testimonials" className="py-16 sm:py-20 md:py-28">
+    <section id="testimonials" className="py-16 sm:py-20 md:py-28 bg-surface-warm">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">{t(ts.badge)}</p>
@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {ts.items.map((item, i) => (
-            <div key={i} className="bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-sm">
+            <div key={i} className="bg-card/90 rounded-2xl p-6 sm:p-8 border border-white/10 shadow-lg shadow-black/20">
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star key={j} size={16} className="fill-accent text-accent" />

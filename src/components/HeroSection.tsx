@@ -23,14 +23,14 @@ const HeroSection = () => {
 	const proprietorPhones = h.proprietor_phone_numbers;
 
 	return (
-		<section className='relative min-h-[100svh] flex items-center justify-center pt-[5.5rem] lg:pt-20 overflow-hidden'>
+		<section className='relative min-h-[100svh] flex items-center justify-center pt-[6.75rem] md:pt-[5.5rem] lg:pt-[6rem] overflow-hidden'>
 			<div className='absolute inset-0'>
 				<img
 					src={heroImg}
 					alt='Professional large format printing'
 					className='w-full h-full object-cover animate-hero-zoom'
 				/>
-				<div className='absolute inset-0 bg-[#070b14]/75' />
+				<div className='absolute inset-0 bg-[#070b14]/70' />
 				<div className='absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-[#070b14]/50' />
 			</div>
 

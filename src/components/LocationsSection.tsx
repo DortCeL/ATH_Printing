@@ -7,8 +7,17 @@ const LocationsSection = () => {
 	const loc = translations.locations;
 
 	return (
-		<section id='locations' className='py-16 sm:py-20 md:py-28 bg-surface-warm'>
-			<div className='container'>
+		<section id='locations' className='relative py-16 sm:py-20 md:py-28 bg-surface-deep overflow-hidden'>
+			<div
+				className='pointer-events-none absolute inset-0 opacity-40'
+				aria-hidden
+				style={{
+					background:
+						"radial-gradient(ellipse 60% 40% at 20% 0%, hsl(217 72% 48% / 0.18), transparent), radial-gradient(ellipse 50% 35% at 100% 80%, hsl(25 95% 55% / 0.1), transparent)",
+				}}
+			/>
+
+			<div className='container relative'>
 				<div className='text-center max-w-2xl mx-auto mb-10 md:mb-16'>
 					<p className='text-accent font-semibold text-sm uppercase tracking-wider mb-3'>
 						{t(loc.badge)}
@@ -23,9 +32,9 @@ const LocationsSection = () => {
 					{loc.shops.map((shop, i) => (
 						<div
 							key={i}
-							className='bg-card rounded-2xl border border-border shadow-sm overflow-hidden flex flex-col'
+							className='group bg-card/80 rounded-2xl border border-white/10 shadow-lg shadow-black/20 overflow-hidden flex flex-col hover:border-accent/40 transition-colors'
 						>
-							<div className='aspect-[16/10] sm:aspect-[4/3] bg-muted'>
+							<div className='aspect-[16/10] sm:aspect-[4/3] bg-muted relative'>
 								<iframe
 									src={shop.mapUrl}
 									width='100%'
@@ -35,6 +44,7 @@ const LocationsSection = () => {
 									loading='lazy'
 									referrerPolicy='no-referrer-when-downgrade'
 									title={t(shop.name)}
+									className='grayscale-[30%] group-hover:grayscale-0 transition-[filter] duration-300'
 								/>
 							</div>
 
@@ -44,7 +54,7 @@ const LocationsSection = () => {
 								</h3>
 
 								<div className='flex items-start gap-3 text-sm text-muted-foreground'>
-									<MapPin size={16} className='text-primary shrink-0 mt-0.5' />
+									<MapPin size={16} className='text-accent shrink-0 mt-0.5' />
 									<span className='leading-relaxed'>{t(shop.address)}</span>
 								</div>
 
@@ -60,7 +70,7 @@ const LocationsSection = () => {
 
 								<a
 									href={`tel:${shop.phoneTel}`}
-									className='flex items-center gap-3 text-sm font-semibold text-foreground hover:text-primary transition-colors'
+									className='flex items-center gap-3 text-sm font-semibold text-foreground hover:text-accent transition-colors'
 								>
 									<Phone size={16} className='text-accent shrink-0' />
 									{shop.phone}
@@ -71,14 +81,14 @@ const LocationsSection = () => {
 										href={shop.directionsUrl}
 										target='_blank'
 										rel='noopener noreferrer'
-										className='inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-colors'
+										className='inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity'
 									>
 										<ExternalLink size={14} />
 										{t(loc.getDirections)}
 									</a>
 									<a
 										href={`tel:${shop.phoneTel}`}
-										className='inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-muted text-foreground text-sm font-semibold hover:bg-muted/80 transition-colors'
+										className='inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-foreground text-sm font-semibold hover:bg-white/10 transition-colors'
 									>
 										<Phone size={14} />
 										{t(loc.call)}
