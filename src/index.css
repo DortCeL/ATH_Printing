@@ -125,6 +125,47 @@
   }
 }
 
+/* Scroll reveal entrances */
+.reveal {
+  opacity: 0;
+  transition-property: opacity, transform, filter;
+  transition-duration: var(--reveal-duration, 700ms);
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translate3d(0, 2rem, 0);
+}
+
+.reveal-down {
+  transform: translate3d(0, -1.5rem, 0);
+}
+
+.reveal-left {
+  transform: translate3d(-2.25rem, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(2.25rem, 0, 0);
+}
+
+.reveal-scale {
+  transform: scale(0.94);
+}
+
+.reveal-fade {
+  transform: none;
+  filter: blur(4px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -132,6 +173,19 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-up,
+  .reveal-down,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
 

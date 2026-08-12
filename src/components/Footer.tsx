@@ -1,6 +1,7 @@
 import { Phone, MapPin, Clock, MessageCircle, Mail } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
+import Reveal from "./Reveal";
 
 const WHATSAPP_URL =
 	"https://wa.me/8801722881393?text=Hi%20ATH%2C%20I%20want%20to%20place%20a%20print%20order";
@@ -30,11 +31,9 @@ const Footer = () => {
 
 	return (
 		<footer className='bg-[#070b14] text-white'>
-			{/* Main */}
 			<div className='container py-14 sm:py-16 md:py-20'>
 				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-10 xl:gap-8'>
-					{/* Brand */}
-					<div className='xl:col-span-4'>
+					<Reveal variant='up' className='xl:col-span-4'>
 						<a href='#' className='inline-block'>
 							<span className='font-display text-5xl sm:text-6xl font-bold tracking-tight text-white'>
 								ATH
@@ -56,10 +55,9 @@ const Footer = () => {
 							<MessageCircle size={18} />
 							{t(f.whatsappCta)}
 						</a>
-					</div>
+					</Reveal>
 
-					{/* Explore */}
-					<div className='xl:col-span-2'>
+					<Reveal variant='up' delay={80} className='xl:col-span-2'>
 						<h3 className='text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-5'>
 							{t(f.explore)}
 						</h3>
@@ -75,10 +73,9 @@ const Footer = () => {
 								</li>
 							))}
 						</ul>
-					</div>
+					</Reveal>
 
-					{/* Branches */}
-					<div className='xl:col-span-3'>
+					<Reveal variant='up' delay={140} className='xl:col-span-3'>
 						<h3 className='text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-5'>
 							{t(f.branches)}
 						</h3>
@@ -106,10 +103,9 @@ const Footer = () => {
 								</li>
 							))}
 						</ul>
-					</div>
+					</Reveal>
 
-					{/* Reach us */}
-					<div className='xl:col-span-3'>
+					<Reveal variant='up' delay={200} className='xl:col-span-3'>
 						<h3 className='text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-5'>
 							{t(f.reachUs)}
 						</h3>
@@ -152,11 +148,10 @@ const Footer = () => {
 								{t(translations.contact.emailValue)}
 							</a>
 						</div>
-					</div>
+					</Reveal>
 				</div>
 			</div>
 
-			{/* Bottom bar */}
 			<div className='border-t border-white/10'>
 				<div className='container py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left'>
 					<p className='text-xs sm:text-sm text-white/45'>

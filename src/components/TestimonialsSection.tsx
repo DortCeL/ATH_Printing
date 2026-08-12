@@ -1,39 +1,52 @@
 import { Star } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
+import Reveal, { type RevealVariant } from "./Reveal";
+
+const cardVariants: RevealVariant[] = ["left", "up", "right"];
 
 const TestimonialsSection = () => {
-  const { t } = useLanguage();
-  const ts = translations.testimonials;
+	const { t } = useLanguage();
+	const ts = translations.testimonials;
 
-  return (
-    <section id="testimonials" className="py-16 sm:py-20 md:py-28 bg-surface-warm">
-      <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-          <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">{t(ts.badge)}</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">{t(ts.heading)}</h2>
-          <p className="text-muted-foreground text-base sm:text-lg">{t(ts.subtitle)}</p>
-        </div>
+	return (
+		<section id='testimonials' className='py-16 sm:py-20 md:py-28 bg-surface-warm'>
+			<div className='container'>
+				<Reveal variant='fade' className='text-center max-w-2xl mx-auto mb-10 md:mb-16'>
+					<p className='text-accent font-semibold text-sm uppercase tracking-wider mb-3'>
+						{t(ts.badge)}
+					</p>
+					<h2 className='text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-4'>
+						{t(ts.heading)}
+					</h2>
+					<p className='text-muted-foreground text-base sm:text-lg'>{t(ts.subtitle)}</p>
+				</Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
-          {ts.items.map((item, i) => (
-            <div key={i} className="bg-card/90 rounded-2xl p-6 sm:p-8 border border-white/10 shadow-lg shadow-black/20">
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: 5 }).map((_, j) => (
-                  <Star key={j} size={16} className="fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="text-foreground text-sm leading-relaxed mb-6">"{t(item.text)}"</p>
-              <div>
-                <div className="font-heading font-semibold text-foreground text-sm">{t(item.name)}</div>
-                <div className="text-muted-foreground text-xs">{t(item.role)}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+				<div className='grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto'>
+					{ts.items.map((item, i) => (
+						<Reveal key={i} variant={cardVariants[i % cardVariants.length]} delay={i * 120}>
+							<div className='bg-card/90 rounded-2xl p-6 sm:p-8 border border-white/10 shadow-lg shadow-black/20 h-full'>
+								<div className='flex gap-1 mb-4'>
+									{Array.from({ length: 5 }).map((_, j) => (
+										<Star key={j} size={16} className='fill-accent text-accent' />
+									))}
+								</div>
+								<p className='text-foreground text-sm leading-relaxed mb-6'>
+									"{t(item.text)}"
+								</p>
+								<div>
+									<div className='font-heading font-semibold text-foreground text-sm'>
+										{t(item.name)}
+									</div>
+									<div className='text-muted-foreground text-xs'>{t(item.role)}</div>
+								</div>
+							</div>
+						</Reveal>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default TestimonialsSection;

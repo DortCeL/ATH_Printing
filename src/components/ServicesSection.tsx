@@ -1,6 +1,7 @@
 import { Map, Printer, Copy, Palette, BookOpen, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
+import Reveal, { type RevealVariant } from "./Reveal";
 
 const icons: LucideIcon[] = [Map, Printer, Copy, Palette, BookOpen];
 
@@ -49,90 +50,97 @@ const ServicesSection = () => {
 
 			<div className='container relative'>
 				<div className='flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 md:mb-14'>
-					<div>
-						<p className='text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-2'>
-							{t(s.badge)}
+					<Reveal variant='up'>
+						<div>
+							<p className='text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-2'>
+								{t(s.badge)}
+							</p>
+							<h2 className='font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight'>
+								{t(s.heading)}
+							</h2>
+						</div>
+					</Reveal>
+					<Reveal variant='fade' delay={120}>
+						<p className='text-muted-foreground text-sm sm:text-base max-w-xs sm:text-right'>
+							{t(s.aside)}
 						</p>
-						<h2 className='font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight'>
-							{t(s.heading)}
-						</h2>
-					</div>
-					<p className='text-muted-foreground text-sm sm:text-base max-w-xs sm:text-right'>
-						{t(s.aside)}
-					</p>
+					</Reveal>
 				</div>
 
-				{/* Featured — instant eye-catch */}
-				<div className='group relative mb-4 sm:mb-5 rounded-2xl sm:rounded-3xl bg-surface-deep text-foreground overflow-hidden border border-white/10'>
-					<div
-						className='absolute inset-0 opacity-[0.12]'
-						aria-hidden
-						style={{
-							backgroundImage:
-								"linear-gradient(135deg, transparent 40%, hsl(25 95% 55%) 100%)",
-						}}
-					/>
-					<div className='relative flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-6 sm:p-8 md:p-10'>
-						<div className='flex items-center gap-4 md:flex-col md:items-start shrink-0'>
-							<div className='w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:scale-105 transition-transform duration-300'>
-								<Map size={30} className='text-accent-foreground' />
+				<Reveal variant='scale' delay={80} duration={800}>
+					<div className='group relative mb-4 sm:mb-5 rounded-2xl sm:rounded-3xl bg-surface-deep text-foreground overflow-hidden border border-white/10'>
+						<div
+							className='absolute inset-0 opacity-[0.12]'
+							aria-hidden
+							style={{
+								backgroundImage:
+									"linear-gradient(135deg, transparent 40%, hsl(25 95% 55%) 100%)",
+							}}
+						/>
+						<div className='relative flex flex-col md:flex-row md:items-center gap-6 md:gap-10 p-6 sm:p-8 md:p-10'>
+							<div className='flex items-center gap-4 md:flex-col md:items-start shrink-0'>
+								<div className='w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-accent flex items-center justify-center shadow-lg shadow-accent/30 group-hover:scale-105 transition-transform duration-300'>
+									<Map size={30} className='text-accent-foreground' />
+								</div>
+								<span className='font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white/15 leading-none md:hidden'>
+									01
+								</span>
 							</div>
-							<span className='font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white/15 leading-none md:hidden'>
+
+							<div className='flex-1 min-w-0'>
+								<p className='text-accent text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] mb-2'>
+									{t(s.featuredLabel)}
+								</p>
+								<h3 className='font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight'>
+									{t(featured.title)}
+								</h3>
+								<p className='mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground tracking-wide'>
+									{t(featured.tag)}
+								</p>
+							</div>
+
+							<span className='hidden md:block font-display text-[7rem] lg:text-[9rem] font-bold leading-none text-white/[0.06] select-none'>
 								01
 							</span>
 						</div>
-
-						<div className='flex-1 min-w-0'>
-							<p className='text-accent text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] mb-2'>
-								{t(s.featuredLabel)}
-							</p>
-							<h3 className='font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight'>
-								{t(featured.title)}
-							</h3>
-							<p className='mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground tracking-wide'>
-								{t(featured.tag)}
-							</p>
-						</div>
-
-						<span className='hidden md:block font-display text-[7rem] lg:text-[9rem] font-bold leading-none text-white/[0.06] select-none'>
-							01
-						</span>
 					</div>
-				</div>
+				</Reveal>
 
-				{/* Secondary services — colorful grid */}
 				<div className='grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4'>
 					{rest.map((item, i) => {
 						const Icon = icons[i + 1];
 						const num = String(i + 2).padStart(2, "0");
 						const theme = cardThemes[i % cardThemes.length];
+						const direction: RevealVariant =
+							i % 2 === 0 ? "up" : i % 3 === 0 ? "scale" : "up";
 						return (
-							<div
-								key={i}
-								className={`group relative flex flex-col justify-between min-h-[140px] sm:min-h-[180px] p-4 sm:p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:brightness-110 ${theme.shell}`}
-							>
-								<div className='flex items-start justify-between gap-2'>
-									<div
-										className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center ${theme.icon}`}
-									>
-										<Icon size={22} />
+							<Reveal key={i} variant={direction} delay={100 + i * 100}>
+								<div
+									className={`group relative flex flex-col justify-between min-h-[140px] sm:min-h-[180px] p-4 sm:p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:brightness-110 h-full ${theme.shell}`}
+								>
+									<div className='flex items-start justify-between gap-2'>
+										<div
+											className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center ${theme.icon}`}
+										>
+											<Icon size={22} />
+										</div>
+										<span
+											className={`font-display text-2xl sm:text-3xl font-bold leading-none ${theme.num}`}
+										>
+											{num}
+										</span>
 									</div>
-									<span
-										className={`font-display text-2xl sm:text-3xl font-bold leading-none ${theme.num}`}
-									>
-										{num}
-									</span>
-								</div>
 
-								<div className='mt-6 sm:mt-8'>
-									<h3 className='font-heading font-bold text-sm sm:text-lg leading-snug'>
-										{t(item.title)}
-									</h3>
-									<p className={`mt-1.5 text-[11px] sm:text-xs leading-relaxed ${theme.tag}`}>
-										{t(item.tag)}
-									</p>
+									<div className='mt-6 sm:mt-8'>
+										<h3 className='font-heading font-bold text-sm sm:text-lg leading-snug'>
+											{t(item.title)}
+										</h3>
+										<p className={`mt-1.5 text-[11px] sm:text-xs leading-relaxed ${theme.tag}`}>
+											{t(item.tag)}
+										</p>
+									</div>
 								</div>
-							</div>
+							</Reveal>
 						);
 					})}
 				</div>

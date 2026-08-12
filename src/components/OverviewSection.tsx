@@ -4,17 +4,13 @@ import {
 	Users,
 	Building2,
 	Check,
-	Phone,
-	Mail,
-	Facebook,
-	Linkedin,
-	MapPin,
 } from "lucide-react";
 import overviewImg from "@/assets/overview-facility.jpg";
 import abbu from "@/assets/abbu.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
 import ProprietorCard from "./ProprietorCard";
+import Reveal from "./Reveal";
 
 const OverviewSection = () => {
 	const { t } = useLanguage();
@@ -29,17 +25,16 @@ const OverviewSection = () => {
 
 	return (
 		<section id='overview' className='py-16 sm:py-20 md:py-28 bg-background'>
-			<p className='text-accent text-center font-semibold text-sm sm:text-base uppercase tracking-wider mb-8 sm:mb-10 px-4'>
-				{t(o.badge)}
-			</p>
+			<Reveal variant='fade' className='text-center mb-8 sm:mb-10 px-4'>
+				<p className='text-accent font-semibold text-sm sm:text-base uppercase tracking-wider'>
+					{t(o.badge)}
+				</p>
+			</Reveal>
 			<div className='container'>
 				<div className='grid lg:grid-cols-2 gap-10 lg:gap-16 items-center'>
-					{/* LEFT COLUMN */}
-					<div>
-						{/* REPLACED the old img and comment with this new component */}
+					<Reveal variant='left' className='min-w-0'>
 						<ProprietorCard image={abbu} alt={t(o.imageAlt)} className='mb-8' />
 
-						{/* YOUR ORIGINAL DIV - UNTOUCHED */}
 						<div>
 							<h2 className='text-3xl md:text-5xl font-heading font-bold text-foreground mb-6'>
 								{t(o.heading)}
@@ -61,34 +56,34 @@ const OverviewSection = () => {
 								))}
 							</ul>
 						</div>
-					</div>
+					</Reveal>
 
-					{/* RIGHT COLUMN - YOUR ORIGINAL CODE - UNTOUCHED */}
 					<div className='space-y-6'>
-						<div className='rounded-3xl overflow-hidden shadow-lg'>
-							<img
-								src={overviewImg}
-								alt={t(o.imageAlt)}
-								className='w-full aspect-[4/3] object-cover'
-								loading='lazy'
-								width={1280}
-								height={960}
-							/>
-						</div>
+						<Reveal variant='right' delay={120}>
+							<div className='rounded-3xl overflow-hidden shadow-lg'>
+								<img
+									src={overviewImg}
+									alt={t(o.imageAlt)}
+									className='w-full aspect-[4/3] object-cover'
+									loading='lazy'
+									width={1280}
+									height={960}
+								/>
+							</div>
+						</Reveal>
 						<div className='grid grid-cols-2 gap-4'>
 							{stats.map((stat, i) => (
-								<div
-									key={i}
-									className='bg-card border border-white/10 rounded-2xl p-5 text-center shadow-lg shadow-black/20'
-								>
-									<stat.icon size={22} className='text-primary mx-auto mb-2' />
-									<div className='text-2xl md:text-3xl font-heading font-bold text-foreground'>
-										{stat.value}
+								<Reveal key={i} variant='scale' delay={180 + i * 90}>
+									<div className='bg-card border border-white/10 rounded-2xl p-5 text-center shadow-lg shadow-black/20'>
+										<stat.icon size={22} className='text-primary mx-auto mb-2' />
+										<div className='text-2xl md:text-3xl font-heading font-bold text-foreground'>
+											{stat.value}
+										</div>
+										<div className='text-xs text-muted-foreground mt-1'>
+											{stat.label}
+										</div>
 									</div>
-									<div className='text-xs text-muted-foreground mt-1'>
-										{stat.label}
-									</div>
-								</div>
+								</Reveal>
 							))}
 						</div>
 					</div>
