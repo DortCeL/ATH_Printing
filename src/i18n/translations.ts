@@ -12,6 +12,7 @@ export const translations = {
 		testimonials: { en: "Testimonials", bn: "প্রশংসাপত্র" },
 		faq: { en: "FAQ", bn: "প্রশ্নোত্তর" },
 		locations: { en: "Locations", bn: "শাখাসমূহ" },
+		team: { en: "Team", bn: "টিম" },
 		contact: { en: "Contact", bn: "যোগাযোগ" },
 		orderWhatsApp: {
 			en: "Contact via WhatsApp",
@@ -566,6 +567,30 @@ export const translations = {
 					"https://www.google.com/maps/dir/?api=1&destination=23.78083435879612,90.40515907474985",
 			},
 		],
+	},
+
+	// Team
+	team: {
+		badge: { en: "Our Team", bn: "আমাদের টিম" },
+		heading: { en: "People Behind ATH", bn: "ATH-এর মানুষগুলো" },
+		subtitle: {
+			en: "Meet the staff at each branch - experienced, reliable, and ready to help.",
+			bn: "প্রতিটি শাখার এক্সিকিউটিভ এর সাথে পরিচিত হোন - অভিজ্ঞ, নির্ভরযোগ্য এবং সাহায্য করতে প্রস্তুত।",
+		},
+		comingSoon: { en: "Photo coming soon", bn: "ছবি শীঘ্রই আসছে" },
+		placeholderName: { en: "Team member", bn: "টিম সদস্য" },
+		branches: {
+			mirpur: { en: "Mirpur-10", bn: "মিরপুর-১০" },
+			farmgate: { en: "Farmgate", bn: "ফার্মগেট" },
+			mohakhali: { en: "Mohakhali", bn: "মহাখালী" },
+		},
+		roles: {
+			headOfOperations: { en: "Head of Operations", bn: "অপারেশন হেড" },
+			branchManager: { en: "Branch Manager", bn: "ব্রাঞ্চ ম্যানেজার" },
+			seniorExecutive: { en: "Senior Executive", bn: "সিনিয়র এক্সিকিউটিভ" },
+			juniorExecutive: { en: "Junior Executive", bn: "জুনিয়র এক্সিকিউটিভ" },
+			assistantExecutive: { en: "Assistant Executive", bn: "সহকারী এক্সিকিউটিভ" },
+		},
 	},
 
 	// Contact

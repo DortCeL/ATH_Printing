@@ -20,6 +20,7 @@ const exploreLinks = [
 	{ key: "works" as const, href: "#works" },
 	{ key: "machinery" as const, href: "#machinery" },
 	{ key: "locations" as const, href: "#locations" },
+	{ key: "team" as const, href: "#team" },
 	{ key: "contact" as const, href: "#contact" },
 ];
 

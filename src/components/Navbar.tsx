@@ -9,6 +9,7 @@ const navLinks = [
 	{ key: "works" as const, href: "#works", id: "works" },
 	{ key: "machinery" as const, href: "#machinery", id: "machinery" },
 	{ key: "locations" as const, href: "#locations", id: "locations" },
+	{ key: "team" as const, href: "#team", id: "team" },
 ];
 
 const WHATSAPP_URL =
