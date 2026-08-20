@@ -158,7 +158,13 @@ const Footer = () => {
 					<p className='text-xs sm:text-sm text-white/45'>
 						© {new Date().getFullYear()} ATH — AutoCAD Training Home. {t(f.rights)}
 					</p>
-					<p className='text-xs text-white/35'>{t(f.branchesLine)}</p>
+					<p className='text-xs text-white/35 hidden md:block'>{t(f.branchesLine)}</p>
+					<p className='text-xs sm:text-sm text-white/40'>
+						{t(f.builtBy)}{" "}
+						<span className='font-heading font-semibold tracking-wide text-accent hover:text-white transition-colors cursor-default'>
+							{t(f.builderName)}
+						</span>
+					</p>
 				</div>
 			</div>
 		</footer>

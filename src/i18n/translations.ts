@@ -33,7 +33,7 @@ export const translations = {
 		companyAbbr: { en: "ATH", bn: "এ টি এইচ" },
 		description: {
 			en: "Maps, architectural plans, and engineering drawings — printed with precision, speed, and unmatched quality. Trusted by professionals across industries since 1994.",
-			bn: "ম্যাপকপি, স্থাপত্য নকশা এবং ইঞ্জিনিয়ারিং ড্রয়িং — নির্ভুলতা, গতি ও অতুলনীয় মানে প্রিন্ট। ১৯৯৪ সাল থেকে সকল শিল্পের পেশাদারদের বিশ্বস্ত অংশীদার।",
+			bn: "ম্যাপকপি, স্থাপত্য নকশা এবং ইঞ্জিনিয়ারিং ড্রয়িং - নির্ভুলতা, গতি ও অতুলনীয় মানে প্রিন্ট। ১৯৯৪ সাল থেকে সকল শিল্পের পেশাদারদের বিশ্বস্ত অংশীদার।",
 		},
 		/** CEO / proprietor numbers — add more here anytime */
 		proprietor_phone_numbers: ["01711825803", "01971825803"],
@@ -65,12 +65,12 @@ export const translations = {
 			},
 			{
 				title: {
-					en: "Large Format",
-					bn: "বড় ফরম্যাট",
+					en: "Large Format Printing & Scanning",
+					bn: "বড় ফরম্যাট প্রিন্টিং এবং স্ক্যানিং",
 				},
 				tag: {
-					en: "Plot & scan A0–A4 · up to 42″",
-					bn: "প্লট ও স্ক্যান A0–A4 · ৪২″ পর্যন্ত",
+					en: "Any size upto 44″ width",
+					bn: "৪৪″ প্রস্থ পর্যন্ত যেকোনো সাইজ",
 				},
 			},
 			{
@@ -79,8 +79,8 @@ export const translations = {
 					bn: "ফটোকপি",
 				},
 				tag: {
-					en: "High volume · 20,000 A4 / day",
-					bn: "উচ্চ পরিমাণ · দৈনিক ২০,০০০ A4",
+					en: "20,000 A4 copies / day",
+					bn: "দৈনিক ২০,০০০ টি A4 সাইজ",
 				},
 			},
 			{
@@ -100,7 +100,7 @@ export const translations = {
 				},
 				tag: {
 					en: "Pro finish · up to 36″ wide",
-					bn: "প্রো ফিনিশ · ৩৬″ পর্যন্ত",
+					bn: "প্রো ফিনিশ · যেকোনো সাইজ",
 				},
 			},
 		],
@@ -114,12 +114,12 @@ export const translations = {
 			bn: "তিন দশকের প্রিন্টিং দক্ষতা",
 		},
 		para1: {
-			en: "Established in 1994 at Farmgate, Dhaka, AutoCAD Training Home (ATH) began as a professional AutoCAD training institute. In 1996, we expanded into large-format tracing, blueprint and ammonia printing — and never looked back.",
-			bn: "১৯৯৪ সালে ঢাকার ফার্মগেটে AutoCAD Training Home (ATH) যাত্রা শুরু করে পেশাদার AutoCAD প্রশিক্ষণ কেন্দ্র হিসেবে। ১৯৯৬ সালে আমরা বড় ফরম্যাটের ট্রেসিং, নীলনক্সা আর অ্যামোনিয়া প্রিন্টিং-এ পা রাখি — আর সেদিন থেকে পিছনে ফিরে তাকাতে হয়নি।",
+			en: "Established in 1994 at Farmgate, Dhaka, AutoCAD Training Home (ATH) began as a professional AutoCAD training institute. In 1996, we expanded into large-format tracing, blueprint and ammonia printing.",
+			bn: "১৯৯৪ সালে ঢাকার ফার্মগেটে AutoCAD Training Home (ATH) যাত্রা শুরু করে পেশাদার AutoCAD প্রশিক্ষণ কেন্দ্র হিসেবে। ১৯৯৬ সালে আমরা বড় ফরম্যাটের ট্রেসিং, নীলনক্সা আর অ্যামোনিয়া প্রিন্টিং-এ পা রাখি",
 		},
 		para2: {
-			en: "Today, ATH is the trusted printing partner of leading architectural firms, engineering consultancies, developers, and government organizations across Bangladesh — a true one-stop solution for professional printing.",
-			bn: "বর্তমানে ATH বাংলাদেশের শীর্ষস্থানীয় আর্কিটেকচার ফার্ম, ইঞ্জিনিয়ারিং কনসালটেন্সি, ডেভেলপার আর সরকারি প্রতিষ্ঠানের বিশ্বস্ত মুদ্রণ সঙ্গী — যা পেশাদার মুদ্রণের জন্য একটি সম্পূর্ণ সমাধান।",
+			en: "Today, ATH is the trusted printing partner of leading architectural firms, engineering consultancies, developers, and government organizations across Bangladesh. A true one-stop solution for professional printing.",
+			bn: "বর্তমানে ATH বাংলাদেশের শীর্ষস্থানীয় আর্কিটেকচার ফার্ম, ইঞ্জিনিয়ারিং কনসালটেন্সি, ডেভেলপার আর সরকারি প্রতিষ্ঠানের বিশ্বস্ত মুদ্রণ সঙ্গী, যা পেশাদার মুদ্রণের জন্য একটি সম্পূর্ণ সমাধান।",
 		},
 		points: [
 			{
@@ -127,8 +127,8 @@ export const translations = {
 				bn: "এসি সহ প্রিন্টিং রুম",
 			},
 			{
-				en: "3 standby generators — zero downtime",
-				bn: "৩টি স্ট্যান্ডবাই জেনারেটর — কাজ থামে না",
+				en: "3 standby generators, zero downtime",
+				bn: "৩টি স্ট্যান্ডবাই জেনারেটর",
 			},
 			{
 				en: "15 skilled technical professionals",
@@ -277,33 +277,26 @@ export const translations = {
 			{
 				name: { en: "Large Format Plotters", bn: "বড় ফরম্যাট প্লটার" },
 				count: "15",
-				tag: { en: '24″ · 36″ · 42″', bn: '২৪″ · ৩৬″ · ৪২″' },
-				featured: true,
 			},
 			{
-				name: { en: 'Map Copiers', bn: "ম্যাপ কপিয়ার" },
+				name: { en: "Map Copiers", bn: "ম্যাপ কপিয়ার" },
 				count: "6",
-				tag: { en: '36″ high-volume', bn: "৩৬″ উচ্চ পরিমাণ" },
 			},
 			{
 				name: { en: "Ammonia Printers", bn: "অ্যামোনিয়া প্রিন্টার" },
 				count: "4",
-				tag: { en: "Classic blueprints", bn: "ক্লাসিক ব্লুপ্রিন্ট" },
 			},
 			{
 				name: { en: "A3 Printers", bn: "A3 প্রিন্টার" },
 				count: "10",
-				tag: { en: "Document runs", bn: "ডকুমেন্ট প্রিন্ট" },
 			},
 			{
 				name: { en: "A3 Photocopiers", bn: "A3 ফটোকপিয়ার" },
 				count: "6",
-				tag: { en: "4 color · 2 B/W", bn: "৪ রঙিন · ২ সাদা-কালো" },
 			},
 			{
 				name: { en: "Laminators", bn: "লেমিনেটর" },
 				count: "3",
-				tag: { en: 'Up to 36″', bn: "৩৬″ পর্যন্ত" },
 			},
 		],
 		extras: [
@@ -313,7 +306,6 @@ export const translations = {
 		table: {
 			equipment: { en: "Equipment", bn: "যন্ত্রপাতি" },
 			qty: { en: "Qty", bn: "সংখ্যা" },
-			spec: { en: "Spec", bn: "বিবরণ" },
 		},
 		capacityHeading: {
 			en: "Daily Capacity",
@@ -412,34 +404,34 @@ export const translations = {
 	// Testimonials
 	testimonials: {
 		badge: { en: "Testimonials", bn: "প্রশংসাপত্র" },
-		heading: { en: "Trusted by Professionals", bn: "পেশাদারদের বিশ্বস্ত" },
+		heading: { en: "What Our Clients Say", bn: "ক্লায়েন্টরা যা বলেন" },
 		subtitle: {
-			en: "Engineers, architects, and organizations rely on ATH for their printing needs.",
-			bn: "ইঞ্জিনিয়ার, স্থপতি এবং প্রতিষ্ঠানগুলো তাদের প্রিন্টিং প্রয়োজনে ATH-এর উপর নির্ভর করে।",
+			en: "From architects to survey offices - people who print with us every week.",
+			bn: "স্থপতি থেকে সার্ভে অফিস — যারা প্রতি সপ্তাহে আমাদের কাছে প্রিন্ট করেন।",
 		},
 		items: [
 			{
-				name: { en: "Eng. Rafiq Ahmed", bn: "ইঞ্জি. রফিক আহমেদ" },
-				role: { en: "Civil Engineer", bn: "সিভিল ইঞ্জিনিয়ার" },
+				name: { en: "Rafiq Ahmed", bn: "রফিক আহমেদ" },
+				role: { en: "Civil Engineer, Mirpur", bn: "সিভিল ইঞ্জিনিয়ার, মিরপুর" },
 				text: {
-					en: "ATH consistently delivers sharp, accurate prints of our structural drawings. Their turnaround time is unmatched.",
-					bn: "ATH ধারাবাহিকভাবে আমাদের স্ট্রাকচারাল ড্রয়িংয়ের তীক্ষ্ণ, নির্ভুল প্রিন্ট প্রদান করে। তাদের টার্নঅ্যারাউন্ড টাইম অতুলনীয়।",
+					en: "I bring A0 structural sheets almost every other day. They print fast, the lines stay sharp, and they never mess up the scale. For big jobs like this, that reliability matters more than anything.",
+					bn: "প্রায় একদিন পরপরই A0 স্ট্রাকচারাল শিট নিয়ে আসি। দ্রুত প্রিন্ট হয়, লাইনগুলো পরিষ্কার থাকে, আর স্কেল কখনো নষ্ট হয় না। এত বড় কাজের জন্য এই নির্ভরযোগ্যতাই সবচেয়ে দরকার।",
 				},
 			},
 			{
-				name: { en: "Fatima Khan", bn: "ফাতিমা খান" },
-				role: { en: "Architecture Studio Lead", bn: "আর্কিটেকচার স্টুডিও লিড" },
+				name: { en: "Fahim Khan", bn: "ফাহিম খান" },
+				role: { en: "Architect", bn: "স্থপতি" },
 				text: {
-					en: "We've been using ATH for all our plan sets. The quality is outstanding and bulk pricing saves us a lot.",
-					bn: "আমরা আমাদের সকল প্ল্যান সেটের জন্য ATH ব্যবহার করি। মান অসাধারণ এবং বাল্ক প্রাইসিং আমাদের অনেক সাশ্রয় করে।",
+					en: "Anwar bhai treats every client with so much care. Even when the shop is busy, he checks the file properly, suggests the right paper, and makes sure nothing goes wrong. That kind of behaviour is rare these days.",
+					bn: "আনোয়ার ভাই প্রতিটা ক্লায়েন্টের সাথে এত যত্ন নিয়ে কথা বলেন। দোকান ব্যস্ত থাকলেও ফাইল ঠিকমতো দেখেন, কোন কাগজে প্রিন্ট ভালো হবে বলেন, আর যাতে ভুল না হয় সেটা নিশ্চিত করেন। এমন ব্যবহার আজকাল খুব কম পাওয়া যায়।",
 				},
 			},
 			{
-				name: { en: "Dhaka Survey Corp.", bn: "ঢাকা সার্ভে কর্প." },
-				role: { en: "Surveying Company", bn: "জরিপ কোম্পানি" },
+				name: { en: "Kawsar Hossain", bn: "কাউসার হোসেন" },
+				role: { en: "Survey Office Manager", bn: "সার্ভে অফিস ম্যানেজার" },
 				text: {
-					en: "Printing hundreds of cadastral maps every month — ATH handles it without a single issue. Highly recommended.",
-					bn: "প্রতি মাসে শত শত ভূমি মানচিত্র প্রিন্ট করা — ATH কোনো সমস্যা ছাড়াই এটি পরিচালনা করে। অত্যন্ত সুপারিশকৃত।",
+					en: "Some months we print hundreds of mouza maps in one go. ATH handles that volume without delay, and the copy quality is consistently good. We don't have to babysit the order — we drop it off and collect when ready.",
+					bn: "কিছু মাসে একসাথে শত শত মৌজা ম্যাপ প্রিন্ট করতে হয়। ATH সেই পরিমাণ কাজ দেরি না করে সামলে নেয়, আর কপির মানও সবসময় ভালো থাকে। অর্ডার নিয়ে বসে থাকতে হয় না, দিয়ে এসে ঠিক সময়ে তুলে নিই।",
 				},
 			},
 		],
@@ -572,7 +564,7 @@ export const translations = {
 	// Team
 	team: {
 		badge: { en: "Our Team", bn: "আমাদের টিম" },
-		heading: { en: "People Behind ATH", bn: "ATH-এর মানুষগুলো" },
+		heading: { en: "People Behind ATH", bn: "ATH-এর দক্ষ কারিগর" },
 		subtitle: {
 			en: "Meet the staff at each branch - experienced, reliable, and ready to help.",
 			bn: "প্রতিটি শাখার এক্সিকিউটিভ এর সাথে পরিচিত হোন - অভিজ্ঞ, নির্ভরযোগ্য এবং সাহায্য করতে প্রস্তুত।",
@@ -641,6 +633,8 @@ export const translations = {
 			en: "Farmgate · Mirpur-10 · Mohakhali",
 			bn: "ফার্মগেট · মিরপুর-১০ · মহাখালী",
 		},
+		builtBy: { en: "Built by", bn: "নির্মাণে" },
+		builderName: { en: "Ismail AliF", bn: "ইসমাইল আলিফ" },
 	},
 
 	// ChatBot

@@ -119,15 +119,20 @@ const Navbar = () => {
 	const navLinkClass = (active: boolean) =>
 		`px-3 md:px-3.5 py-1.5 rounded-full text-xs md:text-sm font-bold whitespace-nowrap transition-all duration-300 ${
 			active
-				? "bg-accent text-accent-foreground shadow-md shadow-accent/40 scale-105"
-				: "text-white/65 hover:text-white hover:bg-white/10"
+				? "bg-[#1a1208] text-accent shadow-md shadow-black/25 scale-105"
+				: "text-[#1a1208]/75 hover:text-[#1a1208] hover:bg-black/10"
 		}`;
 
 	const langButtonClass =
-		"relative shrink-0 flex items-center gap-1.5 rounded-md font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors";
+		"relative shrink-0 flex items-center gap-1.5 rounded-md font-semibold transition-colors";
+
+	const langOnDark =
+		"text-white/80 hover:text-white hover:bg-white/10";
+	const langOnOrange =
+		"text-[#1a1208]/80 hover:text-[#1a1208] hover:bg-black/10";
 
 	return (
-		<nav className='fixed top-0 inset-x-0 z-50 text-white shadow-lg'>
+		<nav className='fixed top-0 inset-x-0 z-50 shadow-xl shadow-black/35 border-b border-black/30'>
 			<div className='md:hidden'>
 				<div className='bg-black border-b border-white/10'>
 					<div className={shell}>
@@ -141,11 +146,11 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<div className='bg-[#1a1a1a] border-b border-white/10'>
+				<div className='bg-accent border-b border-black/10'>
 					<div className={`${shell} flex items-center justify-between gap-3 py-1.5`}>
 						<a
 							href='#'
-							className='font-heading font-bold text-sm leading-tight tracking-wide text-red-500 truncate min-w-0'
+							className='font-heading font-bold text-sm leading-tight tracking-wide text-[#1a1208] truncate min-w-0'
 						>
 							AutoCAD Training Home
 						</a>
@@ -154,13 +159,13 @@ const Navbar = () => {
 								<div
 									id='lang-hint'
 									role='status'
-									className='max-w-[9.5rem] rounded-md bg-accent text-accent-foreground px-2 py-1 text-[10px] leading-snug font-semibold shadow-md animate-fade-in-up'
+									className='max-w-[9.5rem] rounded-md bg-[#1a1208] text-accent px-2 py-1 text-[10px] leading-snug font-semibold shadow-md animate-fade-in-up'
 								>
 									{t(translations.nav.langHint)}
 									<button
 										type='button'
 										onClick={dismissLangHint}
-										className='ml-2 underline decoration-accent-foreground/50 underline-offset-2 opacity-80 hover:opacity-100'
+										className='ml-2 underline decoration-accent/50 underline-offset-2 opacity-80 hover:opacity-100'
 									>
 										OK
 									</button>
@@ -168,8 +173,8 @@ const Navbar = () => {
 							)}
 							<button
 								onClick={toggleLang}
-								className={`${langButtonClass} px-2 py-1 text-xs ${
-									showLangHint ? "ring-2 ring-accent/70 text-white bg-white/10" : ""
+								className={`${langButtonClass} ${langOnOrange} px-2 py-1 text-xs ${
+									showLangHint ? "ring-2 ring-[#1a1208]/40 bg-black/10" : ""
 								}`}
 								aria-label='Toggle language'
 								aria-describedby={showLangHint ? "lang-hint" : undefined}
@@ -181,7 +186,7 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<div className='bg-[#1a1a1a]'>
+				<div className='bg-accent'>
 					<div className='overflow-x-auto scrollbar-none'>
 						<div className='flex items-center gap-1.5 px-3 py-1.5 min-w-max'>
 							{navLinks.map((link) => {
@@ -205,7 +210,7 @@ const Navbar = () => {
 								href={WHATSAPP_URL}
 								target='_blank'
 								rel='noopener noreferrer'
-								className='ml-4 px-3 py-1.5 rounded-full text-xs font-semibold bg-whatsapp text-whatsapp-foreground whitespace-nowrap'
+								className='ml-4 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#1a1208] text-accent whitespace-nowrap hover:bg-black transition-colors'
 							>
 								WhatsApp
 							</a>
@@ -243,7 +248,7 @@ const Navbar = () => {
 							)}
 							<button
 								onClick={toggleLang}
-								className={`${langButtonClass} px-2.5 lg:px-3 py-1 text-sm ${
+								className={`${langButtonClass} ${langOnDark} px-2.5 lg:px-3 py-1 text-sm ${
 									showLangHint ? "ring-2 ring-accent/70 text-white bg-white/10" : ""
 								}`}
 								aria-label='Toggle language'
@@ -256,11 +261,11 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<div className='bg-[#1a1a1a]'>
+				<div className='bg-accent'>
 					<div className={`${shell} flex items-center justify-between gap-4 lg:gap-8 py-1.5 md:py-2`}>
 						<a
 							href='#'
-							className='font-heading font-bold text-base lg:text-xl xl:text-2xl leading-tight tracking-wide text-red-500 shrink-0'
+							className='font-heading font-bold text-base lg:text-xl xl:text-2xl leading-tight tracking-wide text-[#1a1208] shrink-0'
 						>
 							AutoCAD Training Home
 						</a>
@@ -283,7 +288,7 @@ const Navbar = () => {
 								href={WHATSAPP_URL}
 								target='_blank'
 								rel='noopener noreferrer'
-								className='ml-4 lg:ml-5 px-3 lg:px-3.5 py-1.5 rounded-sm hover:bg-whatsapp/80 transition-colors text-xs md:text-sm font-semibold bg-whatsapp text-whatsapp-foreground whitespace-nowrap'
+								className='ml-4 lg:ml-5 px-3 lg:px-3.5 py-1.5 rounded-sm text-xs md:text-sm font-semibold bg-[#1a1208] text-accent whitespace-nowrap hover:bg-black transition-colors'
 							>
 								WhatsApp
 							</a>

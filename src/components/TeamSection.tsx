@@ -45,16 +45,16 @@ const branchStaff: Record<BranchId, TeamMember[]> = {
 			image: sudevImg,
 		},
 		{
-			id: "mirpur-habib",
-			name: { en: "Habib Hussain", bn: "হাবিব হুসাইন" },
-			role: "seniorExecutive",
-			image: habibImg,
-		},
-		{
 			id: "mirpur-biplob",
 			name: { en: "Biplob Mitro", bn: "বিপ্লব মিত্র" },
 			role: "seniorExecutive",
 			image: biplobImg,
+		},
+		{
+			id: "mirpur-habib",
+			name: { en: "Habib Hussain", bn: "হাবিব হুসাইন" },
+			role: "seniorExecutive",
+			image: habibImg,
 		},
 		{
 			id: "mirpur-shipon",
